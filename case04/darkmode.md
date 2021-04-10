@@ -227,11 +227,42 @@ body {
     }, 300);
 ```
 - 토글 버튼을 클릭하면 로컬 스토리지에 테마를 저장하고 저장된 테마를 기준으로 다시 렌더링한다.
+```javascript
 
-
+```
+ !이때 생각드는 부분! =><a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Conditional_Operator'>'삼향 연산자' </a><br/>
+ 로컬스토리지에 저장된 theme가 dark이면 light로 변경하고 light이면 dark로 변경한다.
+ ```javascript
+ localStorage.setItem('theme', `${theme === 'dark' ? 'light' : 'dark'}`);
+ ```
+ 
 3. DarkMode - window.matchMedia
+3.1 문제
 - 로컬스토리지에 저장된 테마가 없을 때 window.matchMedia 메서드로 사용자 OS 테마를 감지해 이를 테마에 적용
 - 로컬스토리지에 저장된 테마가 있으면 사용자 OS 테마보다 이를 우선하여 적용
+3.2 문제 해결
+- 로컬 스토리지에 저장된 테마가 없다면 window.matchMedia 메서드로 사용자 OS 테마를 감지해 이를 테마에 적용한다.
+- 로컬 스토리지에 저장된 테마가 있다면 사용자 OS 테마보다 이를 우선 적용한다.<br/><br/>
+- a. media
+```css
+@media (prefers-color-scheme:dark) {
+.themed {
+background-color :#000;
+color:#fff;
+}
+.themd::after {
+content:'Dark mode detacked';
+}
+```
+- b. javascript
+```javacscript
+    if (!theme) {
+        // 사용자 OS 테마가 다크 모드이면 matches는 ture다.
+        const { matches } = window.matchMedia('(prefers-color-scheme: dark)');
+        theme = matches ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+    }
+ ```
 - <a href="https://developer.mozilla.org/ko/docs/Web/API/Window"> window mdn </a>
 
 4. DarkMode - react- styledComponent  
