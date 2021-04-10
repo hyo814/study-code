@@ -1,4 +1,15 @@
-# 다크 모드 공부하기
+# Case4 : Dark mode
+
+## 케이스 주제
+Q. 다음과 같이 토글 버튼을 클릭하여 테마(다크 모드/라이트 모드)를 설정하면 테마가 뷰에 반영되도록 구현해보자. 테마는 로컬스토리지에 저장하여 웹페이지를 리로드하거나 다시 접근했을 때 저장된 테마를 적용하도록 한다.
+
+### 기능 요구사항
+1. 로컬스토리지에 저장되어 있는 테마(다크 모드/라이트 모드)를 기준으로 초기 렌더링한다.
+2. 로컬스토리지에 저장된 테마가 없다면 라이트 모드로 초기 렌더링한다.
+3. 테마를 적용하여 렌더링할 때 기존 테마가 변경되어 깜빡거리는 현상(flash of incorrect theme, FOIT)이 발생하지 않도록 한다.
+4. 토글 버튼을 클릭하면 로컬스토리지에 테마를 저장하고 저장된 테마를 기준으로 다시 렌더링한다.
+
+### 다크모드
 1. 다크모드의 정의
 - 소프트웨어에서 밝은 화면에 검은 글자 테마 대신에 어두운 화면에 흰 글자 테마를 지원하는 것. 
 - 배경화면뿐만 아니라 유저 인터페이스 전반의 분위기를 의미.
@@ -184,13 +195,47 @@ body.dark article {
     color: #fff;
 }
 ```
-3. DarkMode - window.matchMedia
+2.3 문제
+- 로컬스토리지에 저장된 테마(다크 모드/라이트 모드)를 기준으로 초기 렌더링
+- 로컬스토리지에 저장된 테마가 없으면 라이트 모드로 초기 렌더링
+
+4. DarkMode - window.matchMedia
+- 로컬스토리지에 저장된 테마가 없을 때 window.matchMedia 메서드로 사용자 OS 테마를 감지해 이를 테마에 적용
+- 로컬스토리지에 저장된 테마가 있으면 사용자 OS 테마보다 이를 우선하여 적용
 - <a href="https://developer.mozilla.org/ko/docs/Web/API/Window"> window mdn </a>
 
 4. DarkMode - react- styledComponent
-- <출처자료>
+바닐라 자바스크립트로 구현한 dark mode는 body 요소에 클래스를 추가/제거하는 방식으로 동작한다. React에서도 이 방식을 사용하면 컴포넌트에서 body 요소를 조작하는 부수 효과(side effect)에 의존하게 되므로 직관적이지 않고 컴포넌트의 재사용이 어려워지며 FOIT(flash of incorrect theme)을 방지하기도 번거롭다.
+
+요구 사항은 다음과 같다.
+
+- 함수 컴포넌트와 훅을 사용해 구현한다.
+- [Styled-components의 ThemeProvider](https://styled-components.com/docs/advanced#theming)를 사용하면 간단하게 테마를 전역 관리할 수 있다. 테마(dark/light)를 객체로 정의하고 Styled-components의 ThemeProvider를 사용해 테마가 필요한 컴포넌트에게 전달한다.
+
+- <기타 자료>
   - <a href="https://react-icons.github.io/react-icons/">react - icon</a>
   - <a href="https://react-bootstrap.github.io/">react bootstrap</a>
   - <a href=https://material-ui.com/>react material - ui</a>
 
 5. DarkMode - react 기능 구현
+
+6. 주요 학습 키워드
+- [localStorage](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage)
+- [prefers-color-scheme](https://developer.mozilla.org/ko/docs/Web/CSS/@media/prefers-color-scheme)
+- [window.matchMedia](https://developer.mozilla.org/ko/docs/Web/API/Window/matchMedia)
+- [styled-components: theming](https://styled-components.com/docs/advanced#theming)
+- [useState](https://ko.reactjs.org/docs/hooks-state.html)
+- [useEffect](https://ko.reactjs.org/docs/hooks-reference.html#useeffect)
+- [Context API](https://ko.reactjs.org/docs/context.html)
+- [useContext](https://ko.reactjs.org/docs/hooks-reference.html#usecontext)
+
+
+### 참고
+
+Windows와 macOS 등은 운영 체제 레벨에서 사용자 테마(다크 모드/라이트 모드)를 설정할 수 있다.
+
+CSS의 [prefers-color-scheme](https://developer.mozilla.org/ko/docs/Web/CSS/@media/prefers-color-scheme) media query나 자바스크립트의 [window.matchMedia](https://developer.mozilla.org/ko/docs/Web/API/Window/matchMedia) 메서드를 사용하면 운영 체제 레벨에서 설정한 사용자 테마를 감지할 수 있다.
+
+- [prefers-color-scheme: Hello darkness, my old friend](https://web.dev/prefers-color-scheme)
+
+
