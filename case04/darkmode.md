@@ -128,6 +128,7 @@ function f() {
    - <a href='https://bravenamme.github.io/2019/10/29/javascript-promise/'>자료 1번</a>
    - <a href='https://kongda.tistory.com/20'>자료 2번</a>
    - <a href='https://geundung.dev/52'>자료 3번</a>
+   - <a href='https://librewiki.net/wiki/%EC%BD%9C%EB%B0%B1_%EC%A7%80%EC%98%A5'>자료 4번</a>
  
 
 2. DarkMode의 Basic Code
