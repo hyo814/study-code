@@ -17,15 +17,15 @@ Q. 다음과 같이 토글 버튼을 클릭하여 테마(다크 모드/라이트
 <a href='https://ifh.cc/v-DGwgth' target='_blank'><img src='https://ifh.cc/g/DGwgth.png' border='0'></a>
 
 1.1 원리
-웹 스토리지의 key와 value 값을 통하여 dark 모드를 볼 수 있습니다.<br/>
+웹 스토리지의 key와 value 값을 통하여 dark 모드를 볼 수 있다.<br/>
 사용자 모드에서 application을 찾아 storage 부분을 보게 되면<br/>
-theme에 dark가 저장이 되면 다시 f5를 누르게 되어도 그대로 dark 상태에 있습니다.<br/>
-theme에 light라 저장이 되어 있다면 light 버젼으로 화면을 볼 수 있습니다.<br/>
+theme에 dark가 저장이 되면 다시 f5를 누르게 되어도 그대로 dark 상태에 있다.<br/>
+theme에 light라 저장이 되어 있다면 light 버젼으로 화면을 볼 수 있다.<br/>
 - 예시 이미지
 <a href='https://ifh.cc/v-42PKNj' target='_blank'><img src='https://ifh.cc/g/42PKNj.png' border='0'></a>
 
  1.2 타이머 함수와 예시
-- setTimeout(함수, 시간) : 일정 시간 후 함수 실행(1000당 1초입니다.)
+- setTimeout(함수, 시간) : 일정 시간 후 함수 실행(1000당 1초!)
 ```javascript
 const timer = setTimeout(() => {
   console.log('hello')
@@ -55,11 +55,11 @@ clearInterval(timer)
 ```
 
 1.3 localstorage  
-웹 스토리지(web storage)에는 로컬 스토리지(localStorage)와 세션 스토리지(sessionStorage)가 있습니다.<br/>
-이 두 개의 매커니즘의 차이점은 데이터가 어떤 범위 내에서 얼마나 오래 보존되느냐에 있습니다.<br/>
-세션 스토리지는 웹페이지의 세션이 끝날 때 저장된 데이터가 지워지는 반면에, 로컬 스토리지는 웹페이지의 세션이 끝나더라도 데이터가 지워지지 않습니다.<br/> 
-다시 말해, 브라우저에서 같은 웹사이트를 여러 탭이나 창에 띄우면, 여러 개의 세션 스토리지에 데이터가 서로 격리되어 저장되며, 각 탭이나 창이 닫힐 때 저장해 둔 데이터도 함께 소멸합니다.<br/>
-반면에, 로컬 스토리지의 경우 여러 탭이나 창 간에 데이터가 서로 공유되며 탭이나 창을 닫아도 데이터는 브라우저에 그대로 남아 있습니다.<br/>
+웹 스토리지(web storage)에는 로컬 스토리지(localStorage)와 세션 스토리지(sessionStorage)가 있다.<br/>
+이 두 개의 매커니즘의 차이점은 데이터가 어떤 범위 내에서 얼마나 오래 보존되느냐에 있다.<br/>
+세션 스토리지는 웹페이지의 세션이 끝날 때 저장된 데이터가 지워지는 반면에, 로컬 스토리지는 웹페이지의 세션이 끝나더라도 데이터가 지워지지 않다.<br/> 
+다시 말해, 브라우저에서 같은 웹사이트를 여러 탭이나 창에 띄우면, 여러 개의 세션 스토리지에 데이터가 서로 격리되어 저장되며, 각 탭이나 창이 닫힐 때 저장해 둔 데이터도 함께 소멸<br/>
+반면에, 로컬 스토리지의 경우 여러 탭이나 창 간에 데이터가 서로 공유되며 탭이나 창을 닫아도 데이터는 브라우저에 그대로 남아 있다.<br/>
 - <출처 자료>  
   - <a href='https://ifuwanna.tistory.com/16'>패캠 자료</a>
   - <a href='https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage'>자료1번</a>
@@ -227,9 +227,6 @@ body {
     }, 300);
 ```
 - 토글 버튼을 클릭하면 로컬 스토리지에 테마를 저장하고 저장된 테마를 기준으로 다시 렌더링한다.
-```javascript
-
-```
  !이때 생각드는 부분! =><a href='https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Conditional_Operator'>'삼향 연산자' </a><br/>
  로컬스토리지에 저장된 theme가 dark이면 light로 변경하고 light이면 dark로 변경한다.
  ```javascript
@@ -279,11 +276,12 @@ content:'Dark mode detacked';
 
 4.2 문제해결
 - 로컬 스토리지에 저장된 테마가 없다면 window.matchMedia 메서드로 사용자 OS 테마를 감지해 이를 테마에 적용한다.
-- 로컬 스토리지에 저장된 테마가 있다면 사용자 OS 테마보다 이를 우선 적용한다.
-4.3 createGlobalStyle
+- 로컬 스토리지에 저장된 테마가 있다면 사용자 OS 테마보다 이를 우선 적용한다.<br/>
+
+4.3 createGlobalStyle <br/>
 4.4 css => react style components 화 한다.
 - 대문자 조심하기
-- div 할지 span할지도 조심하기 =>  <a href='https://mainia.tistory.com/3289'>차이점</a>
+- div 할지 span할지도 조심하기 =>  <a href='https://mainia.tistory.com/3289'>차이점</a><br/>
 ex. 예시
 ```javascript
 const ToggleSwitch = styled.div`
@@ -307,7 +305,7 @@ const ToggleSwitch = styled.div`
   - <a href="https://react-bootstrap.github.io/">react bootstrap</a>
   - <a href=https://material-ui.com/>react material - ui</a>
 
-5. DarkMode - react 기능 구현
+5. DarkMode - react 기능 구현<일요일에 해야함>
 
 6. 주요 학습 키워드
 - [localStorage](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage)
