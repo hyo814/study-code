@@ -71,9 +71,9 @@ CallBack 함수란 이름 그대로 나중에 호출되는 함수를 말한다.<
  - 콜백지옥
  
  - <출처자료>
-  - <a href='https://bravenamme.github.io/2019/10/29/javascript-promise/'>자료 1번</a>
-  - <a href='https://kongda.tistory.com/20'>자료 2번</a>
-  - <a href='https://geundung.dev/52'>자료 3번</a>
+   - <a href='https://bravenamme.github.io/2019/10/29/javascript-promise/'>자료 1번</a>
+   - <a href='https://kongda.tistory.com/20'>자료 2번</a>
+   - <a href='https://geundung.dev/52'>자료 3번</a>
  
 
 2. DarkMode의 Basic Code
@@ -84,8 +84,8 @@ CallBack 함수란 이름 그대로 나중에 호출되는 함수를 말한다.<
 
 4. DarkMode - react- styledComponent
 - <출처자료>
- - <a href="https://react-icons.github.io/react-icons/">react - icon</a>
- - <a href="https://react-bootstrap.github.io/">react bootstrap</a>
- - <a href=https://material-ui.com/>react material - ui</a>
+  - <a href="https://react-icons.github.io/react-icons/">react - icon</a>
+  - <a href="https://react-bootstrap.github.io/">react bootstrap</a>
+  - <a href=https://material-ui.com/>react material - ui</a>
 
 5. DarkMode - react 기능 구현
