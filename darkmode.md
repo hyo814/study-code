@@ -233,7 +233,7 @@ body {
  localStorage.setItem('theme', `${theme === 'dark' ? 'light' : 'dark'}`);
  ```
  
-3. DarkMode - window.matchMedia
+3. DarkMode - window.matchMedia<br/>
 3.1 문제
 - 로컬스토리지에 저장된 테마가 없을 때 window.matchMedia 메서드로 사용자 OS 테마를 감지해 이를 테마에 적용
 - 로컬스토리지에 저장된 테마가 있으면 사용자 OS 테마보다 이를 우선하여 적용
@@ -264,8 +264,9 @@ content:'Dark mode detacked';
 <a href="https://developer.mozilla.org/ko/docs/Web/API/Window"> window mdn </a>
 
 4.0 DarkMode - react 편 " 테마를 전역관리 - Context API "
-- <a href='https://react.vlpt.us/basic/22-context-dispatch.html'>전역관리</a> <br/>
-- <a href='https://velog.io/@lchyung1998/React-Hooks%EB%A1%9C-%EB%81%9D%EB%82%B4%EB%8A%94-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC'>react - hooks </a> <br/>
+- <a href='https://react.vlpt.us/basic/22-context-dispatch.html'>전역관리</a>
+- <a href='https://velog.io/@lchyung1998/React-Hooks%EB%A1%9C-%EB%81%9D%EB%82%B4%EB%8A%94-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC'>react - hooks</a>
+
 4.1 DarkMode - react- styledComponent  
 바닐라 자바스크립트로 구현한 dark mode는 body 요소에 클래스를 추가/제거하는 방식으로 동작한다. React에서도 이 방식을 사용하면 컴포넌트에서 body 요소를 조작하는 부수 효과(side effect)에 의존하게 되므로 직관적이지 않고 컴포넌트의 재사용이 어려워지며 FOIT(flash of incorrect theme)을 방지하기도 번거롭다.
 
