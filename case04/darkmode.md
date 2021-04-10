@@ -5,8 +5,15 @@
 - 예시 이미지
 <a href='https://ifh.cc/v-DGwgth' target='_blank'><img src='https://ifh.cc/g/DGwgth.png' border='0'></a>
 
+1.1 원리
+웹 스토리지의 key와 value 값을 통하여 dark 모드를 볼 수 있습니다.<br/>
+사용자 모드에서 application을 찾아 storage 부분을 보게 되면<br/>
+theme에 dark가 저장이 되면 다시 f5를 누르게 되어도 그대로 dark 상태에 있습니다.<br/>
+theme에 light라 저장이 되어 있다면 light 버젼으로 화면을 볼 수 있습니다.<br/>
+- 예시 이미지
+<a href='https://ifh.cc/v-42PKNj' target='_blank'><img src='https://ifh.cc/g/42PKNj.png' border='0'></a>
 
- 1.1 타이머 함수와 예시
+ 1.2 타이머 함수와 예시
 - setTimeout(함수, 시간) : 일정 시간 후 함수 실행(1000당 1초입니다.)
 ```javascript
 const timer = setTimeout(() => {
@@ -36,7 +43,7 @@ clearInterval(timer)
 })
 ```
 
-1.2 localstorage  
+1.3 localstorage  
 웹 스토리지(web storage)에는 로컬 스토리지(localStorage)와 세션 스토리지(sessionStorage)가 있습니다.<br/>
 이 두 개의 매커니즘의 차이점은 데이터가 어떤 범위 내에서 얼마나 오래 보존되느냐에 있습니다.<br/>
 세션 스토리지는 웹페이지의 세션이 끝날 때 저장된 데이터가 지워지는 반면에, 로컬 스토리지는 웹페이지의 세션이 끝나더라도 데이터가 지워지지 않습니다.<br/> 
@@ -48,7 +55,7 @@ clearInterval(timer)
   - <a href='https://ponyozzang.tistory.com/341'>자료3번</a>
   - <a href='https://www.daleseo.com/js-web-storage/'>자료 4번</a>
  
- 1.3 콜백 함수
+ 1.4 콜백 함수
  - 콜백함수  
  함수의 인수로 사용되는 함수 - 실행 위치를 보장하는 용도로 활용한다.<br/>
 <자세히...><br/>
@@ -132,9 +139,51 @@ function f() {
    - <a href='https://librewiki.net/wiki/%EC%BD%9C%EB%B0%B1_%EC%A7%80%EC%98%A5'>자료 4번</a>
  
 
-2. DarkMode의 Basic Code
-
-
+2. DarkMode의 Basic Code<br/>
+2.1 토글 버튼?<br/>
+토글버튼(Toggle button)은 두가지 상태중에 하나로 토글되어지도록 만든 버튼이다.<br/>
+토글 두가지 상태 중 하나를 선택할 수 있다는 점에서 라디오 버튼을 떠올릴 수 도 있지만, 불이 꺼지고 켜지는 상태를 표시하는 스위치 같은 역할을 한다고 생각하면 된다.<br/>
+On 상태에서는 On이라는 글자와 함께 불이 들어오고, Off 상태에서는 Off라는 글자와 함께 불이 꺼진다.<br/>
+```html
+   <div class="toggle-button">
+      <div class="toggle-button-switch"></div>
+      <div class="toggle-button-text">
+        <div class="toggle-button-text-on"><i class="far fa-sun fa-lg"></i></div>
+        <div class="toggle-button-text-off"><i class="far fa-moon fa-lg"></i></div>
+      </div>
+    </div>
+```
+2.2 원리<br/>
+- 토글 버튼의 내부의 원이 왼쪽으로 52px을 이동을 하면 light에서 dark 방향으로 위치변경이 됩니다.
+```css
+.toggle-button>.toggle-button-switch {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    /* toggle => left: 52px */
+    width: 46px;
+    height: 46px;
+    background-color: #fff;
+    border-radius: 100%;
+    transition: left 0.3s;
+}
+```
+- body-class가 dark가 되면 dark 모드가 됩니다.
+```css
+/* Dark Theme */
+body.dark {
+    background-color: #232323;
+}
+body.dark .toggle-button>.toggle-button-switch {
+    left: 52px;
+}
+body.dark .toggle-button>.toggle-button-text {
+    background-color: #fc3164;
+}
+body.dark article {
+    color: #fff;
+}
+```
 3. DarkMode - window.matchMedia
 - <a href="https://developer.mozilla.org/ko/docs/Web/API/Window"> window mdn </a>
 
