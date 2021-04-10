@@ -266,7 +266,7 @@ content:'Dark mode detacked';
 - 참고자료<br/> 
 <a href="https://developer.mozilla.org/ko/docs/Web/API/Window"> window mdn </a>
 
-4.0 DarkMode - react 편
+4.0 DarkMode - react 편 " 테마를 전역관리 - Context API "
 - <a href='https://react.vlpt.us/basic/22-context-dispatch.html'>전역관리</a> <br/>
 - <a href='https://velog.io/@lchyung1998/React-Hooks%EB%A1%9C-%EB%81%9D%EB%82%B4%EB%8A%94-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC'>react - hooks </a> <br/>
 4.1 DarkMode - react- styledComponent  
@@ -277,7 +277,32 @@ content:'Dark mode detacked';
 - 함수 컴포넌트와 훅을 사용해 구현한다.
 - [Styled-components의 ThemeProvider](https://styled-components.com/docs/advanced#theming)를 사용하면 간단하게 테마를 전역 관리할 수 있다. 테마(dark/light)를 객체로 정의하고 Styled-components의 ThemeProvider를 사용해 테마가 필요한 컴포넌트에게 전달한다.
 
+4.2 문제해결
+- 로컬 스토리지에 저장된 테마가 없다면 window.matchMedia 메서드로 사용자 OS 테마를 감지해 이를 테마에 적용한다.
+- 로컬 스토리지에 저장된 테마가 있다면 사용자 OS 테마보다 이를 우선 적용한다.
+4.3 createGlobalStyle
+4.4 css => react style components 화 한다.
+- 대문자 조심하기
+- div 할지 span할지도 조심하기 =>  <a href='https://mainia.tistory.com/3289'>차이점</a>
+ex. 예시
+```javascript
+const ToggleSwitch = styled.div`
+  position: absolute;
+  top: 2px;
+  /* ThemeProvider의 theme props가 전달된다. */
+  /* left: ${({ theme }) => theme.toggleButtonSwitchLeft}; */
+  left: ${(props) => props.theme.toggleButtonSwitchLeft};
+  width: 46px;
+  height: 46px;
+  background-color: #fff;
+  border-radius: 100%;
+  transition: left 0.3s;
+`;
+```
+
 - <기타 자료>
+  - <a href='https://fontawesome.com/'>fontawesome</a>
+  - <a href='https://fonts.google.com/'>구글폰트</a>
   - <a href="https://react-icons.github.io/react-icons/">react - icon</a>
   - <a href="https://react-bootstrap.github.io/">react bootstrap</a>
   - <a href=https://material-ui.com/>react material - ui</a>
