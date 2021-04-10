@@ -199,12 +199,12 @@ body.dark article {
 - 로컬스토리지에 저장된 테마(다크 모드/라이트 모드)를 기준으로 초기 렌더링
 - 로컬스토리지에 저장된 테마가 없으면 라이트 모드로 초기 렌더링
 
-4. DarkMode - window.matchMedia
+3. DarkMode - window.matchMedia
 - 로컬스토리지에 저장된 테마가 없을 때 window.matchMedia 메서드로 사용자 OS 테마를 감지해 이를 테마에 적용
 - 로컬스토리지에 저장된 테마가 있으면 사용자 OS 테마보다 이를 우선하여 적용
 - <a href="https://developer.mozilla.org/ko/docs/Web/API/Window"> window mdn </a>
 
-4. DarkMode - react- styledComponent
+4. DarkMode - react- styledComponent  
 바닐라 자바스크립트로 구현한 dark mode는 body 요소에 클래스를 추가/제거하는 방식으로 동작한다. React에서도 이 방식을 사용하면 컴포넌트에서 body 요소를 조작하는 부수 효과(side effect)에 의존하게 되므로 직관적이지 않고 컴포넌트의 재사용이 어려워지며 FOIT(flash of incorrect theme)을 방지하기도 번거롭다.
 
 요구 사항은 다음과 같다.
