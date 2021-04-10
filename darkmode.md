@@ -266,7 +266,10 @@ content:'Dark mode detacked';
 - 참고자료<br/> 
 <a href="https://developer.mozilla.org/ko/docs/Web/API/Window"> window mdn </a>
 
-4. DarkMode - react- styledComponent  
+4.0 DarkMode - react 편
+- <a href='https://react.vlpt.us/basic/22-context-dispatch.html'>전역관리</a> <br/>
+- <a href='https://velog.io/@lchyung1998/React-Hooks%EB%A1%9C-%EB%81%9D%EB%82%B4%EB%8A%94-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC'>react - hooks </a> <br/>
+4.1 DarkMode - react- styledComponent  
 바닐라 자바스크립트로 구현한 dark mode는 body 요소에 클래스를 추가/제거하는 방식으로 동작한다. React에서도 이 방식을 사용하면 컴포넌트에서 body 요소를 조작하는 부수 효과(side effect)에 의존하게 되므로 직관적이지 않고 컴포넌트의 재사용이 어려워지며 FOIT(flash of incorrect theme)을 방지하기도 번거롭다.
 
 요구 사항은 다음과 같다.
