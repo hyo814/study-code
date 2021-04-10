@@ -4,16 +4,34 @@
 - 배경화면뿐만 아니라 유저 인터페이스 전반의 분위기를 의미.
 
 1.1 타이머 함수와 예시
-- setTimeout(함수, 시간) : 일정 시간 후 함수 실행(예시로 우선 css 써둠)
-```css
-.list > li {
-  postion: absolute;
-  top: 40px;
+- setTimeout(함수, 시간) : 일정 시간 후 함수 실행(1000당 1초입니다.)
+```javascript
+const timer = setTimeout(() => {
+  console.log('hello')
+},3000)
 }
 ```
 - setInterval(함수, 시간) : 시간 간격마다 함수 실행
+```javascript
+const timer = setInterval(() => {
+  console.log('hello')
+},3000)
+}
+```
 - clearTimeout() : 설정된 Timeout 함수를 종료
+```javascript
+const h1E1 = document.querySelector('h1')
+h1El.addEventListener('click',()=>{
+clearTimeout(timer)
+})
+```
 - clearInterval() : 설정된 Interval 함수를 종료
+```javascript
+const h1E1 = document.querySelector('h1')
+h1El.addEventListener('click',()=>{
+clearInterval(timer)
+})
+```
 
 1.2 localstorage
 
