@@ -3,6 +3,7 @@
 - 소프트웨어에서 밝은 화면에 검은 글자 테마 대신에 어두운 화면에 흰 글자 테마를 지원하는 것. 
 - 배경화면뿐만 아니라 유저 인터페이스 전반의 분위기를 의미.
 - 예시 이미지
+<a href='https://ifh.cc/v-DGwgth' target='_blank'><img src='https://ifh.cc/g/DGwgth.png' border='0'></a>
 
 
  1.1 타이머 함수와 예시
