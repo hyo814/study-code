@@ -200,6 +200,35 @@ body.dark article {
 - 로컬스토리지에 저장된 테마(다크 모드/라이트 모드)를 기준으로 초기 렌더링
 - 로컬스토리지에 저장된 테마가 없으면 라이트 모드로 초기 렌더링
 
+2.4 문제 해결
+- 로컬 스토리지에 저장되어 있는 테마(다크 모드/라이트 모드)를 기준으로 초기 렌더링한다.
+- 로컬 스토리지에 저장된 테마가 없다면 라이트 모드로 초기 렌더링한다. 단 if 문을 통해서 이용을 한다라면 맞지만 토글로 이용을 하면 한줄로 줄일 수 있다.
+```javascript
+if (!theme === 'dark') document.body.classList.add('dark');
+else document.body.classList.remove('dark');
+```
+```javascript
+document.body.classList.toggle('dark', theme === 'dark');
+```
+- 테마를 적용하여 초기 렌더링할 때 기존 테마가 변경되어 깜빡거리는 현상(flash of incorrect theme, FOIT)이 발생하지 않도록 한다.
+```css
+body {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    visibility: hidden;
+    /* FOIT 방지 */
+}
+```
+- 이러한 이상 현상이 발생하는 이유는 => transition 0.3초 후에 일어나는 일이 생겨서
+- 0.3초 후 visible로 보이게 함
+```javascript
+    setTimeout(() => {
+        document.body.style.visibility = 'visible';
+    }, 300);
+```
+- 토글 버튼을 클릭하면 로컬 스토리지에 테마를 저장하고 저장된 테마를 기준으로 다시 렌더링한다.
+
+
 3. DarkMode - window.matchMedia
 - 로컬스토리지에 저장된 테마가 없을 때 window.matchMedia 메서드로 사용자 OS 테마를 감지해 이를 테마에 적용
 - 로컬스토리지에 저장된 테마가 있으면 사용자 OS 테마보다 이를 우선하여 적용
