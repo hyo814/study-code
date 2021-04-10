@@ -68,9 +68,63 @@ CallBack 함수란 이름 그대로 나중에 호출되는 함수를 말한다.<
   console.log('bye')
  })
  ```
- - 콜백지옥
- 
- - <출처자료>
+ - 콜백지옥<br/>
+콜백 지옥은 JavaScript를 이용한 비동기 프로그래밍시 발생하는 문제로서, 함수의 매개 변수로 넘겨지는 콜백 함수가 반복되어 코드의 들여쓰기 수준이 감당하기 힘들 정도로 깊어지는 현상을 말한다.
+```javascript
+step1(function (value1) {
+    step2(function (value2) {
+        step3(function (value3) {
+            step4(function (value4) {
+                step5(function (value5) {
+                    step6(function (value6) {
+                        // Do something with value6
+                    });
+                });
+            });
+        });
+    });
+});
+```
+해결 방법으로는<br/>
+- 동기 함수를 사용한다
+```javascript
+let result = fs.readFileSync('file.txt', 'utf8');
+console.log(result);
+```
+- 콜백 함수를 분리한다 - 익명 함수를 포기하라
+```javascript
+step1(afterStep1);
+function afterStep1(value1) {
+    step2(afterStep2);
+}
+function afterStep2(value2) {
+    step3(afterStep3);
+}
+// 생략
+```
+- Promise 패턴 도입
+```javascript
+somethingAsync(value1)
+    .then((result) => {
+        // 성공시 수행할 작업
+    })
+    .catch((error) => {
+        // 실패시 수행할 작업
+    });
+```
+- Async Function (async - await)
+```javascript
+function f() {
+    return somethingAsync(value1)
+        .then((result) => {
+            // 성공시 수행할 작업
+        })
+        .catch((error) => {
+            // 실패시 수행할 작업
+        });
+}
+```
+- <출처자료>
    - <a href='https://bravenamme.github.io/2019/10/29/javascript-promise/'>자료 1번</a>
    - <a href='https://kongda.tistory.com/20'>자료 2번</a>
    - <a href='https://geundung.dev/52'>자료 3번</a>
