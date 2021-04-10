@@ -3,6 +3,20 @@
 - 소프트웨어에서 밝은 화면에 검은 글자 테마 대신에 어두운 화면에 흰 글자 테마를 지원하는 것. 
 - 배경화면뿐만 아니라 유저 인터페이스 전반의 분위기를 의미.
 
+1.1 타이머 함수와 예시
+- setTimeout(함수, 시간) : 일정 시간 후 함수 실행(예시로 우선 css 써둠)
+```css
+.list > li {
+  postion: absolute;
+  top: 40px;
+}
+```
+- setInterval(함수, 시간) : 시간 간격마다 함수 실행
+- clearTimeout() : 설정된 Timeout 함수를 종료
+- clearInterval() : 설정된 Interval 함수를 종료
+
+1.2 localstorage
+
 2. DarkMode의 Basic Code
 
 
