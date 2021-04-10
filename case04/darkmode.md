@@ -33,7 +33,17 @@ clearInterval(timer)
 })
 ```
 
-1.2 localstorage
+1.2 localstorage  
+웹 스토리지(web storage)에는 로컬 스토리지(localStorage)와 세션 스토리지(sessionStorage)가 있습니다.<br/>
+이 두 개의 매커니즘의 차이점은 데이터가 어떤 범위 내에서 얼마나 오래 보존되느냐에 있습니다.<br/>
+세션 스토리지는 웹페이지의 세션이 끝날 때 저장된 데이터가 지워지는 반면에, 로컬 스토리지는 웹페이지의 세션이 끝나더라도 데이터가 지워지지 않습니다.<br/> 
+다시 말해, 브라우저에서 같은 웹사이트를 여러 탭이나 창에 띄우면, 여러 개의 세션 스토리지에 데이터가 서로 격리되어 저장되며, 각 탭이나 창이 닫힐 때 저장해 둔 데이터도 함께 소멸합니다.<br/>
+반면에, 로컬 스토리지의 경우 여러 탭이나 창 간에 데이터가 서로 공유되며 탭이나 창을 닫아도 데이터는 브라우저에 그대로 남아 있습니다.<br/>
+- <출처 자료 들> 
+  - <a href='https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage'>자료1번</a>
+  - <a href='https://jess2.github.io/2018/06/06/JavaScript/JS-%EB%A1%9C%EC%BB%AC-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-Local-Storage/'>자료2번</a>
+  - <a href='https://ponyozzang.tistory.com/341'>자료3번</a>
+  - <a href='https://www.daleseo.com/js-web-storage/'>자료 4번</a>
 
 2. DarkMode의 Basic Code
 
