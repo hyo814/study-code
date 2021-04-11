@@ -306,8 +306,10 @@ const ToggleSwitch = styled.div`
   transition: left 0.3s;
 `;
 ```
-4.5  themProvider ㅌ
-
+4.5  themProvider<br/>
+- <a href='https://velog.io/@hoi/Styled-components-ThemeProvider%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%8A%A4%ED%83%80%EC%9D%BC-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95'>자료</a><br/>
+ThemeProvider의 작동 방식은 Context API를 기반으로 이루어져 있다. <br/>
+ThemeProvider로 감싸진 자식 Component들은 ThemeProvider로 전달받은 theme를 props로 전달받아서 사용이 가능하다.<br/>
 - <기타 자료>
   - <a href='https://fontawesome.com/'>fontawesome</a>
   - <a href='https://fonts.google.com/'>구글폰트</a>
