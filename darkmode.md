@@ -318,18 +318,24 @@ const ToggleSwitch = styled.div`
 5. DarkMode - react 기능 구현<br/>
 5.1 useState<br/>
 리액트 컴포넌트에서 동적인 값을 상태라고 부른다.<br/>
-사용자 인터랙션을 통해 컴포넌트의 상태값이 동적으로 바뀔 경우에는 상태를 관리하는 것이 필요하다.
-
+사용자 인터랙션을 통해 컴포넌트의 상태값이 동적으로 바뀔 경우에는 상태를 관리하는 것이 필요하다.<br/>
+- <a href='https://xiubindev.tistory.com/97?category=826117'>useState</a>
 ```javascript
 const [상태 값 저장 변수, 상태 값 갱신 함수] = useState(상태 초기 값);
 ```
-- <a href='https://xiubindev.tistory.com/97?category=826117'>useState</a><br/>
+
 
 5.2 useEffect<br/>  
 기본 형태 : useEffect(function,deps)<br/>
 - function : 수행하고자하는 작업
 - deps:배열 형태이며, 배열 안에는 검사하고자하는 특정 값 or 빈 배열<br/>
 - <a href='https://xiubindev.tistory.com/100?category=826117'>useEffect</a>
+```javascript
+useEffect(() =>
+{
+ console.log('렌더링 될 때마다 실행');
+ });
+```
 
 6. 주요 학습 키워드
 - [localStorage](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage)
