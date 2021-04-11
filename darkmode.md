@@ -264,6 +264,10 @@ content:'Dark mode detacked';
 <a href="https://developer.mozilla.org/ko/docs/Web/API/Window"> window mdn </a>
 
 4.0 DarkMode - react 편 " 테마를 전역관리 - Context API "
+전역관리를 한다라는 말은 상태 관리한다라는 말이 된다고 한다.<br/>
+Context API와 redux는 같은 듯 다른 느낌의 상태 관리를 한다고 생각이 된다.<br/>
+(Context API는 high-frequency updates에 좋지 않은 성능을 보이지만 Redux는 그렇지 않습니다)<br/>
+- <a href='https://velog.io/@cada/React-Redux-vs-Context-API'>차이점</a>
 - <a href='https://react.vlpt.us/basic/22-context-dispatch.html'>전역관리</a>
 - <a href='https://velog.io/@lchyung1998/React-Hooks%EB%A1%9C-%EB%81%9D%EB%82%B4%EB%8A%94-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC'>react - hooks</a>
 
@@ -280,6 +284,10 @@ content:'Dark mode detacked';
 - 로컬 스토리지에 저장된 테마가 있다면 사용자 OS 테마보다 이를 우선 적용한다.<br/>
 
 4.3 createGlobalStyle <br/>
+찾아보니 css reset 형태 대신 사용하거나 전체의 속성을 다룰때 쓰는 것 같다.
+<a href='https://codingbroker.tistory.com/20'>reset</a>
+<a href='https://styled-components.com/docs/api'>createGlobalStyle</a>
+
 4.4 css => react style components 화 한다.
 - 대문자 조심하기
 - div 할지 span할지도 조심하기 =>  <a href='https://mainia.tistory.com/3289'>차이점</a><br/>
@@ -298,6 +306,7 @@ const ToggleSwitch = styled.div`
   transition: left 0.3s;
 `;
 ```
+4.5  themProvider ㅌ
 
 - <기타 자료>
   - <a href='https://fontawesome.com/'>fontawesome</a>
@@ -306,7 +315,21 @@ const ToggleSwitch = styled.div`
   - <a href="https://react-bootstrap.github.io/">react bootstrap</a>
   - <a href=https://material-ui.com/>react material - ui</a>
 
-5. DarkMode - react 기능 구현<일요일에 해야함>
+5. DarkMode - react 기능 구현<br/>
+5.1 useState<br/>
+리액트 컴포넌트에서 동적인 값을 상태라고 부른다.<br/>
+사용자 인터랙션을 통해 컴포넌트의 상태값이 동적으로 바뀔 경우에는 상태를 관리하는 것이 필요하다.
+
+```javascript
+const [상태 값 저장 변수, 상태 값 갱신 함수] = useState(상태 초기 값);
+```
+- <a href='https://xiubindev.tistory.com/97?category=826117'>useState</a><br/>
+
+5.2 useEffect<br/>  
+기본 형태 : useEffect(function,deps)<br/>
+- function : 수행하고자하는 작업
+- deps:배열 형태이며, 배열 안에는 검사하고자하는 특정 값 or 빈 배열<br/>
+- <a href='https://xiubindev.tistory.com/100?category=826117'>useEffect</a>
 
 6. 주요 학습 키워드
 - [localStorage](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage)
