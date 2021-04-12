@@ -263,7 +263,7 @@ content:'Dark mode detacked';
 - 참고자료<br/> 
 <a href="https://developer.mozilla.org/ko/docs/Web/API/Window"> window mdn </a>
 
-4.0 DarkMode - react 편 " 테마를 전역관리 - Context API "
+4.0 DarkMode - react 편 " 테마를 전역관리 - Context API "<br/>
 전역관리를 한다라는 말은 상태 관리한다라는 말이 된다고 한다.<br/>
 Context API와 redux는 같은 듯 다른 느낌의 상태 관리를 한다고 생각이 된다.<br/>
 (Context API는 high-frequency updates에 좋지 않은 성능을 보이지만 Redux는 그렇지 않습니다)<br/>
