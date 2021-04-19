@@ -47,3 +47,9 @@ q3. React - 주어진 코드를 이해하고, 상태를 조작하는 훅을 이�
 1. cdn 파일을 사용하세요
 2. <a href="https://cdnjs.com/libraries/jquery-modal">1번</a>
 3. <a href="https://jquerymodal.com/">2번</a>
+
+#### q3 
+1. true 이면 팝업과 blackout 이 보이게 한다.  
+2. onSetIsVisible 함수를 구현해서 함수형태로 넘긴다.  
+3. isVisible 이 true 이면 위의 css 를 참고해서 팝업을 실행한다.  
+4. 닫기를 눌렀을 때 작동해야 되는 부분  
