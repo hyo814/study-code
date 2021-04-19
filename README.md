@@ -14,7 +14,7 @@
 ### case12_Auto Complete
 ### case13_Instant Search
 ### case14_Stop Watch 2
-### case15_Modal Window
+### case15_Modal Window <a href='https://github.com/hyo814/study-code/blob/main/modal.md'>정리</
 ### case16_Progress Bar
 ### case17_Carousel 2
 ### case18_Pagination
