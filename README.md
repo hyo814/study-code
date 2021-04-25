@@ -5,7 +5,7 @@
 ### case3_Infinite Scroll <a href='https://github.com/mannue/study/blob/css/fastCampus/secretCode/case3_InfiniteScroll/memo.md'>참고</a>
 ### case4_Dark Mode <a href='https://github.com/hyo814/study-code/blob/main/darkmode.md'>정리</a>
 ### case5_Stop Watch <a href='https://www.notion.so/case-5-02a54e58c9894ca6ac576282853cde1d'>참고</a>
-### case6_Tabs
+### case6_Tabs <a href='https://www.notion.so/Case6-Tabs-5662b3ab5ce54aacb96a0172097ef2c0'>참고</a>
 ### case7_Analog Clock
 ### case8_Carousel
 ### case9_Toggle Button
