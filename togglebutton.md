@@ -44,22 +44,22 @@ Q. on, off 기능 (toggle 기능)을 가지는 버튼 리스트 컴포넌트를 
   ```javascript
   import React, { useState } from 'react';
 
-function Example() {
+  function Example() {
   // 새로운 state 변수를 선언하고, 이것을 count라고 합시다.
   const [count, setCount] = useState(0);
   ```
   
 - 삼향연산자 :
 
-4. 참고할 자료들
-<a href="https://react.vlpt.us/basic/07-useState.html">1번</a>
-<a href="https://ko.reactjs.org/docs/hooks-state.html">2번</a>
-<a href="https://ko.reactjs.org/docs/hooks-state.html">3번</a>
-<a href="https://velog.io/@sdc337dc/0.%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8>차이점</a>
-- 위 링크들을 통해서 참고를 하게 된다면 함수형 컴포넌트 일수록 최신 형태의 기술일 확률이 높습니다. 
-  하지만 클래스에 비해 자료가 많지 않다는 점도 고려하면서 개발을 해야합니다.
+4. 참고할 자료들  
+<a href="https://react.vlpt.us/basic/07-useState.html">1번</a>  
+<a href="https://ko.reactjs.org/docs/hooks-state.html">2번</a>  
+<a href="https://ko.reactjs.org/docs/hooks-state.html">3번</a>  
+<a href="https://velog.io/@sdc337dc/0.%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8">차이점</a>  
+- 위 링크들을 통해서 참고를 하게 된다면 함수형 컴포넌트 일수록 최신 형태의 기술일 확률이 높습니다.   
+  하지만 클래스에 비해 자료가 많지 않다는 점도 고려하면서 개발을 해야합니다.  
   물론 유지 보수를 위한 클래스도 알아야합니다.
-
+  
 5. 해당 코드
 ```javascript
 import React, {useState} from "react";
