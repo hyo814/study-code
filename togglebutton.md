@@ -4,7 +4,7 @@
 토글이라는 용어는 오직 두 가지 상태밖에는 없는 상황에서, 스위치를 한번 누르면 한 값이 되고, 다시 한번 누르면 다른 값으로 변하는 것을 의미한다고 합니다.
 
 ### 케이스 주제
-Q. on, off 기능 (toggle 기능)을 가지는 버튼 리스트 컴포넌트를 구현하십시오.
+Q. on, off 기능 (toggle 기능)을 가지는 버튼 리스트 컴포넌트를 구현합니다.
 
 ### 기능 요구사항 && 기능 작동 이미지
 1. 각 버튼이 선택이 되었는지 안되었는지를 확인할 수 있습니다.
@@ -12,15 +12,15 @@ Q. on, off 기능 (toggle 기능)을 가지는 버튼 리스트 컴포넌트를 
 <a href='https://ifh.cc/v-BAR62p' target='_blank'><img src='https://ifh.cc/g/BAR62p.png' border='0'></a>
 
 ### 문제
-- q1. 데이터에 따른 버튼리스트를 가로로 출력하시오.
-- q2. 한개의 버튼만이 on이 될 수 있도록 하시오.
-- q3. 선택된 버튼의 index를 application으로 전달 하시오.
+- q1. 데이터에 따른 버튼리스트를 가로로 출력합니다.
+- q2. 한개의 버튼만이 on이 될 수 있도록 합니다.
+- q3. 선택된 버튼의 index를 application으로 전달합니다.
 
 ### 주요 학습 키워드
 - 버튼 스타일 적용
 - 컴포넌트와 어플리케이션과의 통신
 
-### 문제 풀이(해야함)
+### 문제 풀이
 1.css 편 - 기본적으로 선택이 되면 색상이 변한다에 초점을 둡니다.
 ```css
 .toggle-button {
@@ -49,8 +49,68 @@ Q. on, off 기능 (toggle 기능)을 가지는 버튼 리스트 컴포넌트를 
     border-left: 1px solid rgba(0,0,0,.32);
 }
 ```
+2. 여기에서의 selector: toggle button을 display할 영역, data: button으로 표현할 리스트, changeEvent: 버튼 클릭 시 이벤트로 표현 될 예정입니다.
+3. 이 때 클릭이 되는 순간 input: display 되는 element 추후에 뜨는 데이터 부분은 output: button element list으로 참고합니다.
+4. q1. index.html을 참고하여 toggle button을 출력합니다.
+5. <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length">length</a>  
+를 통하여 data의 갯수를 알 수 있습니다.  
 
-### 기타 : 함수형 컴포넌트로 토글 버튼을 구현 해보자 (javascript /css 참조)
+```javascript
+ * description: 최초 생성할 때 button list를 for 문을 통해 출력합니다. 템플릿을 관리 할 수 있습니다.
+    */
+    initialize(selector, data) {
+        // q1. index.html을 참고하여 toggle button을 출력합니다.
+        let renderStr = '';
+        for (let i = 0; i < data.length; i++) {
+            renderStr += `
+            <button class="toggle-button">
+                <span class="${i > 0 ? 'border': ''}">${data[i]}</span>
+            </button>
+            `
+        }
+
+        selector.innerHTML = renderStr;
+        // 생성된 button element를 리턴해준다.
+        return document.querySelectorAll('.toggle-button');
+    }
+```
+6. q2와 q3  
+q2. 한개의 버튼만이 toggle이 될 수 있도록 style을 적용합니다.  
+q3. 선택된 버튼의 인덱스 정보를 어플리케이션으로 전달합니다.  
+7. <a href="https://developer.mozilla.org/ko/docs/Web/API/Element/classList">classList</a>  
+classList는 엘리먼트의 클래스 속성의 컬렉션인 활성 DOMTokenList를 반환하는 읽기 전용 프로퍼티입니다,
+classList 사용은 공백으로 구분된 문자열인 element.className을 통해 엘리먼트의 클래스 목록에 접근하는 방식을 대체하는 간편한 방법이라고 합니다.
+8. <a href="https://velog.io/@bigbrothershin/Javascript-method%EC%99%80-this">메서드체이닝</a>
+9. <a href="https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener">addEventListener</a>
+EventTarget의 addEventListener() 메서드는 지정한 이벤트가 대상에 전달될 때마다 호출할 함수를 설정합니다.  
+일반적인 대상은 Element, Document, Window지만, XMLHttpRequest와 같이 이벤트를 지원하는 모든 객체를 대상으로 지정할 수 있습니다.
+
+
+```javascript
+ eventBinding() {
+        this.buttonElements.forEach((element, index) => {
+            // q2. 한개의 버튼만이 toggle이 될 수 있도록 style을 적용합니다.
+            element.addEventListener('click', () => {
+                if (this.selectedIndex === index) {
+                    return;
+                }
+                // toggle 된 버튼을 알기 위한 현재 선택된 button index
+                // this.selectedIndex = -1 을 참고 합니다.
+                if (this.selectedIndex > -1) {
+                    this.buttonElements[this.selectedIndex].classList.remove('select');
+                }
+
+                // q3. 선택된 버튼의 인덱스 정보를 어플리케이션으로 전달합니다.
+                this.selectedIndex = index;
+
+                this.buttonElements[index].classList.add('select');
+
+                this.callback(this.selectedIndex);
+            })
+        })
+```
+
+### 기타 : 함수형 컴포넌트로 토글 버튼을 구현 해보자 [React] (javascript /css 참조)
 1.장점: css를 기반으로 class가 on 일때 토글 버튼이 구현 될 수 있습니다.  
 2.단점: 버튼 갯수가 많아지면 그만큼의 함수가 길어져서 map이나 혹은 다른 방법의 구현을 찾아야 할 수도 있습니다.  
 3.알아야하는 내용
