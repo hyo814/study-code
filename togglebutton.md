@@ -21,6 +21,34 @@ Q. on, off 기능 (toggle 기능)을 가지는 버튼 리스트 컴포넌트를 
 - 컴포넌트와 어플리케이션과의 통신
 
 ### 문제 풀이(해야함)
+1.css 편 - 기본적으로 선택이 되면 색상이 변한다에 초점을 둡니다.
+```css
+.toggle-button {
+    border: 0;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.toggle-button.select {
+    background-color: #ccc;
+}
+
+.toggle-button > span {
+    display: inline-block;
+    padding: 0 12px;
+    line-height: 48px;
+    position: relative;
+}
+
+.toggle-button > span.border {
+    border-left: 1px solid rgba(0,0,0,.32);
+}
+```
 
 ### 기타 : 함수형 컴포넌트로 토글 버튼을 구현 해보자 (javascript /css 참조)
 1.장점: css를 기반으로 class가 on 일때 토글 버튼이 구현 될 수 있습니다.  
