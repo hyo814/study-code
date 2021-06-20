@@ -114,3 +114,8 @@ const getData = (targetWord = '') => {
 - request api를 대신하기 위한 Promise 활용 (test를 위한 mock data 활용)
 - 디자인 부분과 기능을 분리하기 위한 방법
 
+### 기타
+http://reactivex.io/documentation/ko/subject.html
+https://rxjs-dev.firebaseapp.com/api/operators/debounceTime
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes
+
