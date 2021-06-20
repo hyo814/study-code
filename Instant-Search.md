@@ -76,6 +76,35 @@ export const debounce = (callback, delayTime = 500) => {
     }
 }
 ```
+(기타) 타이머 함수와 예시
+- setTimeout(함수, 시간) : 일정 시간 후 함수 실행(1000당 1초!)
+```javascript
+const timer = setTimeout(() => {
+  console.log('hello')
+},3000)
+}
+```
+- setInterval(함수, 시간) : 시간 간격마다 함수 실행
+```javascript
+const timer = setInterval(() => {
+  console.log('hello')
+},3000)
+}
+```
+- clearTimeout() : 설정된 Timeout 함수를 종료
+```javascript
+const h1E1 = document.querySelector('h1')
+h1El.addEventListener('click',()=>{
+clearTimeout(timer)
+})
+```
+- clearInterval() : 설정된 Interval 함수를 종료
+```javascript
+const h1E1 = document.querySelector('h1')
+h1El.addEventListener('click',()=>{
+clearInterval(timer)
+})
+```
 
 - q3. debounce 기능을 통해 가져온 데이터를 외부로 전달합니다. (src->question->instant-search->index.js)
 `./src/question/instant-search/index.js`
