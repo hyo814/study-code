@@ -8,10 +8,8 @@ Q. 검색어를 입력하는 동시에 엔터키, 검색 버튼 누를 필요 �
 
 ### 기능 요구사항
 
-1. 키보드 이벤트를 지연시간(debounce 기능)을 통해 request 횟수를 줄인다.
-![요구사항 첫번째](./src/solution/presenter/instant-search/assets/instant_search_scope1.png)
-
-2. 디자인 템플릿을 변경할 수 있도록 템플릿을 분리한다.
+1. 키보드 이벤트를 지연시간(debounce 기능)을 통해 request 횟수를 줄입니다.
+2. 디자인 템플릿을 변경할 수 있도록 템플릿을 분리합니다.
 
 
 ### 문제
@@ -23,7 +21,7 @@ Q. 검색어를 입력하는 동시에 엔터키, 검색 버튼 누를 필요 �
 * title: instant search display method
 * input: display 되는 element, configuration placeholder, css 정보
 * output: text input element
-* description: 최초 생성할 때 input element를 생성한다. 템플릿을 관리한다.
+* description: 최초 생성할 때 input element를 생성합니다. 템플릿을 관리합니다.
 */
 initialize(selector, configuration) {
     const textinput = document.createElement('input');
@@ -31,7 +29,7 @@ initialize(selector, configuration) {
     textinput.setAttribute('placeholder', configuration.placeholder ?? 'Please enter');
     textinput.classList.add(configuration.css);
     selector.appendChild(textinput);
-    // 생성된 input element를 리턴해준다.
+    // 생성된 input element를 리턴을 실행합니다.
     return textinput;
 }
 ```
@@ -70,12 +68,12 @@ export const debounce = (callback, delayTime = 500) => {
 }
 ```
 
-- q3. debounce 기능을 통해 가져온 데이터를 외부로 전달한다. (src->question->instant-search->index.js)
+- q3. debounce 기능을 통해 가져온 데이터를 외부로 전달합니다. (src->question->instant-search->index.js)
 `./src/question/instant-search/index.js`
 ```js
 /*
 * title: event binding method
-* description: 모든 이벤트를 처리한다.
+* description: 모든 이벤트를 처리합니다.
 */
 eventBinding() {
     // debounce uitl case
