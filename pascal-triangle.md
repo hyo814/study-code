@@ -35,35 +35,33 @@ Constraints: 1 <= numRows <= 30
 삼각형을 그리는 규칙은 다음과 같습니다.
 가.숫자가 들어갈 칸을 첫 번째 줄에는 1개, 두 번째 줄에는 2개, 세 번째 줄에는 3개 이런 식으로 한 줄씩 내려가면 한 칸씩 늘어나게 정삼각형 모양으로 만든다.
 나.첫 번째 줄과 두 번째 줄의 3칸에는 1을 쓴다.
-다.세 번째 줄부터는 줄의 양쪽 끝 칸에는 1을 쓰고 나머지 칸에는 바로 윗줄에 위치한 칸 중 해당 칸과 인접해 있는 두 칸의 숫자를 더해서 그 값을 쓴다.  
+다.세 번째 줄부터는 줄의 양쪽 끝 칸에는 1을 쓰고 나머지 칸에는 바로 윗줄에 위치한 칸 중 해당 칸과 인접해 있는 두 칸의 숫자를 더해서 그 값을 쓴다.
+라. 이러한 형태로 배열을 하면 삼각형 꼴의 수배열을 볼 수 있다.
+
 -(기타)  
 <a href="https://namu.wiki/w/%ED%8C%8C%EC%8A%A4%EC%B9%BC%EC%9D%98%20%EC%82%BC%EA%B0%81%ED%98%95">기타</a>
-
+<a href="https://blog.naver.com/alwaysneoi/100151883607">기타2</a>
 ## 문제 풀이
 ```js
-var generate = function(numRows) {
-    var triangle = [];
+let generate = function(numberRows) {
+    let triangle = [];
 
-//사용자가 0개의 행을 요청하면 0개의 행을 얻게 됩니다.
-    if(numRows == 0) { 
+//1. 사용자가 0개의 행을 요청하면 0개의 행을 얻게 됩니다.
+    if(numberRows === 0) { 
         return triangle
     }
-
-    for (var i = 0; i < numRows; i++) {
-
-        triangle[i] = [];
-//다음으로는 for 문을 사용하여 numRows를 통해 삼각형을 만듭니다.
-//삼각형의 첫번쨰 행을 추가하고 모든 행의 첫 번째 요소는 항상 1입니다.
-        triangle[i][0] = 1;
-
-        for (var j = 1; j < i; j++) {
-            triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j]
+    for (let h = 0; h < numberRows; h++) {
+        triangle[h] = [];
+//2. 다음으로는 for 문을 사용하여 numberRows를 통해 삼각형을 만듭니다.
+//3. 삼각형의 첫번째 행을 추가하고 모든 행의 첫 번째 요소는 항상 1입니다.
+        triangle[h][0] = 1;
+        for (let j = 1; j < h; j++) {
+            triangle[h][j] = triangle[h-1][j-1] + triangle[h-1][j]
         }
-//행을 반복하는 동안 두번째 루프를 사용하여 각 행의 요소를 만듭니다.
-//각 심각형 요소는 왼쪽 위와 오른쪽 위 및 오른쪽 위 요소의 합과 같습니다.
-        triangle[i][i] = 1;
+//4. 행을 반복하는 동안 두번째 루프를 사용하여 각 행의 요소를 만듭니다.
+//5. 이 때, 각 심각형 요소는 왼쪽 위와 오른쪽 위 및 오른쪽 위 요소의 합과 같습니다.
+        triangle[h][h] = 1;
     }
-
     return triangle;
 }
 ```
