@@ -117,11 +117,11 @@ eventBinding() {
 다. <a href="https://ooeunz.tistory.com/17">event-target-value</a>
 이벤트가 생성될 타켓의 값을 의미 합니다.
 
-- (기타) eventSource
-1.<a href="https://developer.mozilla.org/ko/docs/Web/API/EventSource>1</a>
-2.<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventSource/close>2</a>
-3.<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventSource/open_event>3</a>
-4.<a href="https://www.npmjs.com/package/react-event-stream">4</a>
+- (기타) eventSource  
+1.<a href="https://developer.mozilla.org/ko/docs/Web/API/EventSource">1</a>  
+2.<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventSource/close">2</a>  
+3.<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventSource/open_event">3</a>  
+4.<a href="https://www.npmjs.com/package/react-event-stream">4</a>  
 
 - q4. Promise를 사용하여 검색 키워드에 맞는 데이터를 가져와 리스트를 출력하시오. (src->question->instant-search->mock->word->index.js / src->index.js)
 `./src/question/instant-search/mock/word/index.js`
