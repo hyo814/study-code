@@ -1,4 +1,4 @@
-## Case13 : Instant Search
+## Case13 : Instant Search ( 자동 검색)
 
 
 ### 케이스 주제
