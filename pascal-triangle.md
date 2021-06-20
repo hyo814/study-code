@@ -41,8 +41,9 @@ Constraints: 1 <= numRows <= 30
 -(기타)    
 <a href="https://namu.wiki/w/%ED%8C%8C%EC%8A%A4%EC%B9%BC%EC%9D%98%20%EC%82%BC%EA%B0%81%ED%98%95">기타</a>  
 <a href="https://blog.naver.com/alwaysneoi/100151883607">기타2</a>  
-## 문제 풀이
-```js
+## 문제 풀이  
+(주석포함)  
+```javascript
 let generate = function(numberRows) {
     let triangle = [];
 
@@ -65,6 +66,24 @@ let generate = function(numberRows) {
     return triangle;
 }
 ```
+(주석 없음)
+```javascript
+let generate = function(numberRows) {
+    let triangle = [];
+    if(numberRows === 0) { 
+        return triangle
+    }
+    for (let h = 0; h < numberRows; h++) {
+        triangle[h] = [];
+        triangle[h][0] = 1;
+        for (let j = 1; j < h; j++) {
+            triangle[h][j] = triangle[h-1][j-1] + triangle[h-1][j]
+        }
+        triangle[h][h] = 1;
+    }
+    return triangle;
+}
+```  
 
 -(심화)  
   <a href="https://leetcode.com/problems/pascals-triangle-ii/">심화</a>
