@@ -41,6 +41,15 @@ id 값이 abc인 요소의 title 속성을 This is title로 정합니다. 만약
 1. <a href="https://www.codingfactory.net/10419#google_vignette">removeAttribute()</a>
 2. <a href="https://www.codingfactory.net/10419">setAttribute</a>
 
+나. <a href="https://developer.mozilla.org/ko/docs/Web/API/Element/classList">classList</a>
+classList를 이용하면 클래스를 조작하는 다양한 메서드들을 쓸 수 있습니다.
+classList.add : 클래스를 필요에 따라 삽입합니다.
+classList.remove : 클래스를 필요에 따라 제거합니다.
+- (기타) 
+1. <a href="https://velog.io/@rimu/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-classList.add-remove-contains-toggle">기타1</a>
+
+다. <a href="https://blogpack.tistory.com/682">append() 와 appendChild()의 차이</a>
+
 - q2. debounce 기능을 구현하시오. (src->question->instant-search->util->index.js)
 `./src/question/instant-search/util/index.js`
 #### A)
