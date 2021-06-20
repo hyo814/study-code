@@ -35,6 +35,13 @@ initialize(selector, configuration) {
     return textinput;
 }
 ```
+가.<a href="https://www.codingfactory.net/10419">setAttribute()</a> 란 선택한 요소의 속성 값을 정한다고 합니다.
+문법으로는 element.setAttribute( 'attributename', 'attributevalue' )가 됩니다.
+예를 들어 document.getElementById( 'abc' ).setAttribute( 'title', 'This is title' )
+id 값이 abc인 요소의 title 속성을 This is title로 정합니다. 만약 이미 속성값이 존재한다면 그 값을 지우고 새 값을 적용합니다.
+- (기타)
+1. <a href="https://www.codingfactory.net/10419#google_vignette">removeAttribute()</a>
+2. <a href="https://www.codingfactory.net/10419">setAttribute</a>
 
 - q2. debounce 기능을 구현하시오. (src->question->instant-search->util->index.js)
 `./src/question/instant-search/util/index.js`
