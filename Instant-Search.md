@@ -4,7 +4,7 @@
 ### 케이스 주제
 
 Q. 검색어를 입력하는 동시에 엔터키, 검색 버튼 누를 필요 없이 결과값을 즉시 반영할 수 있는 순간 검색 기능을 구현하십시오.
-
+<a href='https://ifh.cc/v-ZdeM7T' target='_blank'><img src='https://ifh.cc/g/ZdeM7T.png' border='0'></a>
 
 ### 기능 요구사항
 
@@ -109,7 +109,6 @@ eventBinding() {
     })
 }
 ```
-
 가. <a href="https://opentutorials.org/course/1375/6761">addEventListener</a>  
 -(기타)<a href="https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener">기타 1</a>  
 영향을 받는 EventListener 를 적절한 순서로 호출하는 지정된 EventTarget 에서 Event 를 (동기적으로) 디스패치합니다.  
@@ -118,6 +117,11 @@ eventBinding() {
 다. <a href="https://ooeunz.tistory.com/17">event-target-value</a>
 이벤트가 생성될 타켓의 값을 의미 합니다.
 
+- (기타) eventSource
+1.<a href="https://developer.mozilla.org/ko/docs/Web/API/EventSource>1</a>
+2.<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventSource/close>2</a>
+3.<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventSource/open_event>3</a>
+4.<a href="https://www.npmjs.com/package/react-event-stream">4</a>
 
 - q4. Promise를 사용하여 검색 키워드에 맞는 데이터를 가져와 리스트를 출력하시오. (src->question->instant-search->mock->word->index.js / src->index.js)
 `./src/question/instant-search/mock/word/index.js`
@@ -131,6 +135,10 @@ const getData = (targetWord = '') => {
        });
 }
 ```
+가. <a href="https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector">querySelector</a>
+Document.querySelector()는 제공한 선택자 또는 선택자 뭉치와 일치하는 문서 내 첫 번째 Element를 반환합니다.   
+일치하는 요소가 없으면 null을 반환합니다.
+
 
 ### 주요 학습 키워드
 - 지연시간을 적용하여 마지막 이벤트만 발생시키는 기능 (debounce) 
