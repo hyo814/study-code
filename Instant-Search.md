@@ -111,7 +111,7 @@ eventBinding() {
 ```
 
 가. <a href="https://opentutorials.org/course/1375/6761">addEventListener</a>  
--(기타)<a href="https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener">기타 1</a>
+-(기타)<a href="https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener">기타 1</a>  
 영향을 받는 EventListener 를 적절한 순서로 호출하는 지정된 EventTarget 에서 Event 를 (동기적으로) 디스패치합니다.  
 나. <a href="https://developer.mozilla.org/ko/docs/Web/API/EventTarget/dispatchEvent">dispatch</a>  
 일반 이벤트 처리 규칙은 dispatchEvent() 를 사용하여 수동으로 전달 된 이벤트에도 적용됩니다.
