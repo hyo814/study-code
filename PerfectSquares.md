@@ -20,7 +20,29 @@ Constraints:
 <a href='https://ifh.cc/v-vSo6Z1' target='_blank'><img src='https://ifh.cc/g/vSo6Z1.png' border='0'></a>
 
 
-## (풀이)
+## (풀이) - 주석 (ㅇ)
+```js
+let numSquares = function(n) {
+    let squart_root = 1;
+    let dp = [];
+    for(let i = 1;i<n+1;i++){
+        if(i === squart_root*squart_root){
+            dp[i] = 1;
+            squart_root ++ ;
+        }else{
+            let min = i;
+            for(let j = squart_root-1;j>0;j--){
+                min = Math.min(min,1+dp[i-j*j]);  
+            }
+            dp[i] = min;
+        }
+    }
+    return dp[n];
+};
+```
+
+
+## (풀이) - 주석 (x)
 ```js
 let numSquares = function(n) {
     let squart_root = 1;
