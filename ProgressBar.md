@@ -122,7 +122,8 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 ```
 문법 정리  
--1.querySelector : 제공한 선택자가 일치하는 문서 내 첫번째 element를 반환 합니다. 불 일치시 null 값을 반환 합니다.
+-1.querySelector : 제공한 선택자가 일치하는 문서 내 첫번째 element를 반환 합니다. 불 일치시 null 값을 반환 합니다.  
+
 -2.addEventListener : EventTarget의 addEventListener() 메서드는 지정한 이벤트가 대상에 전달될 때마다 호출할 함수를 설정합니다. 일반적인 대상은 Element, Document, Window지만, XMLHttpRequest와 같이 이벤트를 지원하는 모든 객체를 대상으로 지정할 수 있습니다. addEventListener()는 EventTarget의 주어진 이벤트 유형에, EventListener를 구현한 함수 또는 객체를 이벤트 처리기 목록에 추가해 작동합니다.
 
 q2. Jquery -  Javascript로 구현한 기능을 동일하게 Jquery로도 구현해보는 문제
