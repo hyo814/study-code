@@ -212,3 +212,4 @@ if( current  === 0 ) return;
 - react-bootstrap <a href="https://react-bootstrap.github.io/components/progress">react-bootstrap</a>
 - bootstrap <a href="https://getbootstrap.com/docs/4.0/components/progress">bootstrap</a>
 - ant design <a href="https://ant.design/components/progress">ant design</a>
+- semetic ui <a href="https://semantic-ui.com/modules/progress.html">semetic ui</a>
