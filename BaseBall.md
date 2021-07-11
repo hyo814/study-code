@@ -1,4 +1,4 @@
-<a href="https://leetcode.com/tag/stack/">배열 전체</a>  
+<a href="https://leetcode.com/tag/stack/">스택 전체</a>  
 <a href="https://leetcode.com/problems/baseball-game/description/">참고해야할 사이트</a>    
 ## (영어)
 You are keeping score for a baseball game with strange rules. The game consists of several rounds, where the scores of past rounds may affect future rounds' scores.
