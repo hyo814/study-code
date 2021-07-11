@@ -107,7 +107,7 @@ function frame() {
 - 1.도착지점보다 길면 인터벌 해제됩니다.  
 - 2.그밖에는 지속적으로 길이 감소합니다.  
 
--d.문법 정리 querySelector,addEventListener    
+-d.문법 정리 querySelector, addEventListener    
 (예시)
 ```js
 document.addEventListener("DOMContentLoaded", function(){
