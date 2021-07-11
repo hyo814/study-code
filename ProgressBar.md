@@ -4,6 +4,8 @@
 ### 케이스 주제
 Q. Progressbar 구현
 데이터를 받아오거나 전달을 할때 대기 중인 로딩창이나 혹은 완성 되기 전 대기 화면에서 쓰일 수 있는 프로세스 상태바를 구현하도록 합니다.
+- 슬라이드, 카로셀 만들때 이용 가
+- -mbti 등의 이전 다음 페이지 ui 이용시 활용 가능
 
 
 ### 기능 요구사항
@@ -103,7 +105,7 @@ function frame() {
 - 1.도착지점보다 길면 인터벌 해제됩니다.  
 - 2.그밖에는 지속적으로 길이 감소합니다.  
 
--d.문법 정리 querySelector,addEventListener  
+-d.문법 정리 querySelector,addEventListener    
 (예시)
 ```js
 document.addEventListener("DOMContentLoaded", function(){
@@ -119,10 +121,9 @@ document.addEventListener("DOMContentLoaded", function(){
     progressBar.moveNext();
   });
 ```
-문법 정리
--1.querySelector
--2.addEventListener
--3.addEventListener
+문법 정리  
+-1.querySelector : 제공한 선택자가 일치하는 문서 내 첫번째 element를 반환 합니다. 불 일치시 null 값을 반환 합니다.
+-2.addEventListener : EventTarget의 addEventListener() 메서드는 지정한 이벤트가 대상에 전달될 때마다 호출할 함수를 설정합니다. 일반적인 대상은 Element, Document, Window지만, XMLHttpRequest와 같이 이벤트를 지원하는 모든 객체를 대상으로 지정할 수 있습니다. addEventListener()는 EventTarget의 주어진 이벤트 유형에, EventListener를 구현한 함수 또는 객체를 이벤트 처리기 목록에 추가해 작동합니다.
 
 q2. Jquery -  Javascript로 구현한 기능을 동일하게 Jquery로도 구현해보는 문제
 #### A) 중점포인트
@@ -209,3 +210,4 @@ if( current  === 0 ) return;
 - material ui <a href="https://material-ui.com/components/progress">material-ui</a>
 - react-bootstrap <a href="https://react-bootstrap.github.io/components/progress">react-bootstrap</a>
 - bootstrap <a href="https://getbootstrap.com/docs/4.0/components/progress">bootstrap</a>
+- ant design <a href="https://ant.design/components/progress">ant design</a>
