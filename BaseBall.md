@@ -101,3 +101,7 @@ let calPoints = function(ops) {
     return points.reduce((success, point) => success + point);
 };
 ```
+## 기타
+### 계산기 만들기
+- <a href="https://blog.naver.com/ggamjige8888/221749074687">1</a>
+- <a href="https://blog.naver.com/ggamjige8888/221749068131">2</a>
