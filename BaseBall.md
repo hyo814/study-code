@@ -42,6 +42,61 @@ Constraints:
 <a href='https://ifh.cc/v-Flsg7G' target='_blank'><img src='https://ifh.cc/g/Flsg7G.png' border='0'></a>
 
 ## (풀이) 주석(ㅇ)
-```js```  
+```js
+let calPoints = function(ops) {
+    const points = [];
+  
+    //forEach() 메서드는 주어진 함수를 배열 요소 각각에 대하여 실행합니다.
+    //switch문은 case절 및 실행 문 일치하는 경우 실행합니다.
+    ops.forEach((op) => {
+        switch (op) {
+                //"+" 문자가 있는 경우 전 두 숫자의 값을 더한 값으로 처리합니다.
+            case '+':
+                points.push(points[points.length - 1] + points[points.length - 2]);
+                break;
+                // "D" 문자가 있는 경우 D의 전 숫자 값의 두배의 값을 넣어야 합니다.
+            case 'D':
+                points.push(points[points.length - 1] * 2);
+                break;
+                //"C" 문자가 있는 경우에는 C의 전 숫자 값을 없어져야 하므로 pop()을 해서 삭제합니다.
+            case 'C':
+                points.pop();
+                break;
+                // 숫자일 경우 해당 숫자 값을 스택에 PUSH 합니다.
+                // parseInt() 함수는 문자열 인자를 구문분석하여 특정 진수(수의 진법 체계에 기준이 되는 값)의 정수를 반환합니다.
+            default:
+                points.push(parseInt(op));
+                break;
+        }
+    });
+    
+    // reduce() 메서드는 배열의 각 요소에 대해 주어진 리듀서(reducer) 함수를 실행하고, 하나의 결과값을 반환합니다.
+    return points.reduce((success, point) => success + point);
+};
+```    
+
+
 ## (풀이) 주석(x )
-```js```
+```js
+let calPoints = function(ops) {
+    const points = [];
+    ops.forEach((op) => {
+        switch (op) {
+            case '+':
+                points.push(points[points.length - 1] + points[points.length - 2]);
+                break;
+            case 'D':
+                points.push(points[points.length - 1] * 2);
+                break;
+            case 'C':
+                points.pop();
+                break;
+            default:
+                points.push(parseInt(op));
+                break;
+        }
+    });
+    
+    return points.reduce((success, point) => success + point);
+};
+```
