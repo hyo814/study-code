@@ -12,7 +12,7 @@ At the beginning of the game, you start with an empty record. You are given a li
 
 Return the sum of all the scores on the record.
 
-Constraints:
+Constraints:  
 1.1 <= ops.length <= 1000  
 2.ops[i] is "C", "D", "+", or a string representing an integer in the range [-3 * 104, 3 * 104].  
 3.For operation "+", there will always be at least two previous scores on the record.  
@@ -31,7 +31,7 @@ Constraints:
 
 레코드에 있는 모든 점수의 합계를 반환 합니다 .
 
-제약:
+제약:  
 1.1 <= ops.length <= 1000
 2.ops[i]는 "C", "D", "+"또는 범위의 정수를 나타내는 문자열 입니다.[-3 * 104, 3 * 104]
 3.작업의 "+"경우 기록에는 항상 최소 두 개의 이전 점수가 있습니다.
