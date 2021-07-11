@@ -22,13 +22,23 @@ Constraints:
 
 ## (풀이) - 주석 (ㅇ)
 ```js
+/** * @param {number} n * @return {number} */
 let numSquares = function(n) {
     let squart_root = 1;
     let dp = [];
+    // for 문 동안에 1*1 =1 , 2*2 = 4 , 3*3 = 9 순으로 구분을 할 예정
+    // 숫자로 예시를 하자면 1,4,9 와 같은 완전 수 일때는 갯수를 1개로 치지만
+    // 만약, 1 일때 1 , 4 일때 1 , 9 일때 1
+    // 그렇다면 2,3,5 와 같은 비 완전수 일때는 갯수를 1개가 아닌 최소한의 수로 나열 하여 구분
+    // 2 일때 1+1 이므로 2, 3 일때 1+1+1 이므로 3, 5일 때 위에 4+ 1로 인하여 2로 확인
+    // 예시안의 12의 경우 4가 3 확인
+    //13의 경우 1+4+9 이므로 3 확인
     for(let i = 1;i<n+1;i++){
         if(i === squart_root*squart_root){
             dp[i] = 1;
+            // 사각형이 그림화 된다면 더하기가 되고
             squart_root ++ ;
+            // 만약 그렇지 않다면 최소한의 숫자에서의 덧셈을 추가할 것
         }else{
             let min = i;
             for(let j = squart_root-1;j>0;j--){
