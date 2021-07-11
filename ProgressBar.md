@@ -222,10 +222,10 @@ const handleNext = async() => {
 }
 ```
 하게 된다면,  
-- 애니메이션이 진행중이면 함수 종료
-- 마지막 까지 다차면 종료
-- 그게 아니면 스텝 증가
-- delay 를 실행한다.
+- 1.애니메이션이 진행중이면 함수 종료 합니다.
+- 2.마지막 까지 다차면 종료 합니다.
+- 3.그게 아니면 스텝 증가 합니다.
+- 4.delay 를 실행합니다.
 
 -d.이전으로 이동
 ```js
@@ -233,8 +233,8 @@ if( isLoading.current ) return;
 if( current  === 0 ) return;
 ```
 하게 된다면,  
-- 함수 종료 조건 : 애니메이션 중인가 or progressbar 가 처음
-- 이하 다음으로 이동과 동일
+- 1. 함수 종료 조건으로는 애니메이션 중인가 혹은 progressbar 가 처음인가로 판단 합니다.
+- 2.이하 다음으로 이동과 동일하게 처리 가능합니다.
 
 기타.
 - material ui <a href="https://material-ui.com/components/progress">material-ui</a>
