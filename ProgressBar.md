@@ -70,6 +70,20 @@ ProgressBar.prototype.movePrev = function(){
 - 1.frame 함수를 호출합니다.
 - 2.시작지점의 길이가 끝지점의 길이보다 작으면 setInterval 해제합니다.
 - 3.그밖에 지속적으로 감소합니다.
+- 4.setInterval(함수, 시간) : 시간 간격마다 함수 실행
+```javascript
+const timer = setInterval(() => {
+  console.log('hello')
+},3000)
+}
+```
+-5.clearInterval() : 설정된 Interval 함수를 종료
+```javascript
+const h1E1 = document.querySelector('h1')
+h1El.addEventListener('click',()=>{
+clearInterval(timer)
+})
+```
 
 -c.다음으로 이동  
 ```js
@@ -89,6 +103,26 @@ function frame() {
 - 1.도착지점보다 길면 인터벌 해제됩니다.  
 - 2.그밖에는 지속적으로 길이 감소합니다.  
 
+-d.문법 정리 querySelector,addEventListener  
+(예시)
+```js
+document.addEventListener("DOMContentLoaded", function(){
+
+  var targetElement = document.querySelector('.progress-bar span')
+  var progressBar = new ProgressBar(targetElement);
+
+  document.querySelector('#prev').addEventListener('click' , function(){
+    progressBar.movePrev();
+  });
+
+  document.querySelector('#next').addEventListener('click' , function(){
+    progressBar.moveNext();
+  });
+```
+문법 정리
+-1.querySelector
+-2.addEventListener
+-3.addEventListener
 
 q2. Jquery -  Javascript로 구현한 기능을 동일하게 Jquery로도 구현해보는 문제
 #### A) 중점포인트
