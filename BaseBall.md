@@ -24,6 +24,7 @@ Constraints:
 
 게임을 시작할 때 빈 레코드로 시작합니다. 문자열 목록이 제공됩니다 ops. 여기서 ops[i]는 레코드에 적용해야 하는 작업이고 는 다음 중 하나입니다.ith
 
+★ 해결해야하는 switch 
 1.정수 x- 의 새 점수를 기록합니다 x.  
 2."+"- 이전 두 점수의 합으로 새로운 점수를 기록합니다. 항상 두 개의 이전 점수가 있을 것임을 보장합니다.  
 3."D"- 이전 점수의 두 배인 새 점수를 기록합니다. 항상 이전 점수가 있을 것임을 보장합니다.  
@@ -37,7 +38,7 @@ Constraints:
 3.작업의 "+"경우 기록에는 항상 최소 두 개의 이전 점수가 있습니다.  
 4.작업 "C"및 의 "D"경우 레코드에 항상 이전 점수가 하나 이상 있습니다.  
 
-## (예시)
+## (예시) ★ 예시를 보고 따라 해보기
 <a href='https://ifh.cc/v-MC1syS' target='_blank'><img src='https://ifh.cc/g/MC1syS.png' border='0'></a>  
 <a href='https://ifh.cc/v-Flsg7G' target='_blank'><img src='https://ifh.cc/g/Flsg7G.png' border='0'></a>
 
