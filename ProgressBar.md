@@ -33,6 +33,8 @@ Q. Progressbar 구현
 
 
 ### 문제
+
+
 q1. Javascript - 주어진 템플릿(`q_index.html`)으로 캐러셀 구현 시도 합니다.  
 
 -a. targetElement( 기본 세팅을 구성합니다.)  
@@ -126,14 +128,15 @@ document.addEventListener("DOMContentLoaded", function(){
 
 -2.addEventListener : EventTarget의 addEventListener() 메서드는 지정한 이벤트가 대상에 전달될 때마다 호출할 함수를 설정합니다. 일반적인 대상은 Element, Document, Window지만, XMLHttpRequest와 같이 이벤트를 지원하는 모든 객체를 대상으로 지정할 수 있습니다. addEventListener()는 EventTarget의 주어진 이벤트 유형에, EventListener를 구현한 함수 또는 객체를 이벤트 처리기 목록에 추가해 작동합니다.
 
+
 q2. Jquery -  Javascript로 구현한 기능을 동일하게 Jquery로도 구현해보는 문제
 #### A) 중점포인트
 
-- jQuery animate 의 이해
+- jQuery animate 의 이해 
 
 
 #### 해설
-> 이전으로 가기 클릭시
+-a. 이전으로 가기 클릭시
 ```js
 $('#prev').click(function(){
 
@@ -147,9 +150,28 @@ $('#prev').click(function(){
 
 });
 ```
-- 25%씩 줄어든 길이를 입력해 놓으면 해당 지점까지 애니메이션을 보여주며 이동한다.
-- 500은 애니메이션 스피드
-- 다음으로 이동하기도 늘어난 길이를 입력한다.
+이전으로 가기 클릭시
+- 1.25%씩 줄어든 길이를 입력해 놓으면 해당 지점까지 애니메이션을 보여주며 이동합니다.
+- 2.500은 애니메이션 스피드로 확인 합니다.
+- 3.다음으로 이동하기도 늘어난 길이를 입력합니다.  
+
+-b. 다음으로 클릭시
+```js
+  $('#next').click(function(){
+
+    if( current  === limit ) return;
+
+    current++;
+
+
+    $(".progress-bar > span").animate({
+        width: 25 * current + '%'
+    }, 500);
+
+  });
+```
+다음으로 클릭시 : js 처럼 거꾸로 생각하고 처리를 합니다. (current  === limit)
+
 
 q3. React - 주어진 코드를 이해하고, 상태를 조작하는 훅을 이용해서 완성
 #### A)
