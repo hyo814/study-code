@@ -237,8 +237,28 @@ if( current  === 0 ) return;
 - 2.이하 다음으로 이동과 동일하게 처리 가능합니다.
 
 기타.
+1. 기본적으로 progressbar로 알려진 ui design
 - material ui <a href="https://material-ui.com/components/progress">material-ui</a>
 - react-bootstrap <a href="https://react-bootstrap.github.io/components/progress">react-bootstrap</a>
 - bootstrap <a href="https://getbootstrap.com/docs/4.0/components/progress">bootstrap</a>
 - ant design <a href="https://ant.design/components/progress">ant design</a>
 - semetic ui <a href="https://semantic-ui.com/modules/progress.html">semetic ui</a>
+
+2. 데이터를 받을 시에 대기 화면으로 로딩중 창으로 갈 수 있도록 하는 case
+- usepromise 활용 하기
+-<a href="https://thebook.io/080203/ch14/08-02/">1</a>
+-<a href="https://thebook.io/080203/ch14/08/">2</a>
+```js
+const NewsList = ({ category }) => {
+  const [loading, response, error] = usePromise(() => {
+    const query = category === 'all' ? '' : `&category=${category}`;
+    return axios.get(
+      `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=0a8c4202385d4ec1bb93b7e277b3c51f`,
+    );
+  }, [category]);
+ 
+  // 대기 중일 때 => 이 때 대신 progressbar 활용
+  if (loading) {
+    return <NewsListBlock>대기 중...</NewsListBlock>;
+  }
+```
