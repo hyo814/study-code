@@ -133,7 +133,9 @@ q2. Jquery -  Javascript로 구현한 기능을 동일하게 Jquery로도 구현
 #### A) 중점포인트
 
 - jQuery animate 의 이해 
-
+- 1.animate는 애니메이션 효과를 만듭니다.
+- 2.효과를 줄 속성은 아래 링크를 확인 해주세요.
+- 3. <a href="https://www.codingfactory.net/11820">animate</a>  
 
 #### 해설
 -a. 이전으로 가기 클릭시
