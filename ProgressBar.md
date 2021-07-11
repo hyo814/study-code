@@ -270,3 +270,5 @@ const NewsList = ({ category }) => {
     return <NewsListBlock>대기 중...</NewsListBlock>;
   }
 ```
+3. Slider로 인식한다면 가능한 ui 부분
+-<a href="https://material-ui.com/components/slider/">slider</a>
