@@ -38,4 +38,7 @@ Constraints:
 4.작업 "C"및 의 "D"경우 레코드에 항상 이전 점수가 하나 이상 있습니다.  
 
 ## (예시)
+<a href='https://ifh.cc/v-MC1syS' target='_blank'><img src='https://ifh.cc/g/MC1syS.png' border='0'></a>  
+<a href='https://ifh.cc/v-Flsg7G' target='_blank'><img src='https://ifh.cc/g/Flsg7G.png' border='0'></a>
+
 ## (풀이)
