@@ -1,4 +1,4 @@
-### decode 좀 더 추가하기
+### ★ decode 좀 더 추가하기
 ```js
 const decodeString = function (string) {
     // g나 i는 수정자라고 함.
