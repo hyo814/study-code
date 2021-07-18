@@ -20,7 +20,7 @@
 ### case18_Pagination
 ### case19_Scroll Top
 ### case20_List
-### case21_Modal Window 2<a href='https://github.com/hyo814/study-code/blob/main/secret/Modal2.md'>정리</
+### case21_Modal Window 2<a href='https://github.com/hyo814/study-code/blob/main/secret/Modal2.md'>정리</a>
 ### case22_Scroll Indicator
 ### case23_Loading
 ### case24_Search Bar
