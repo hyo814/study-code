@@ -16,7 +16,7 @@
 ### ★ case14_Stop Watch 2
 ### case15_Modal Window<a href='https://github.com/hyo814/study-code/blob/main/secret/Modal.md'>정리</a>&nbsp;<a href="https://github.com/mannue/study/blob/css/fastCampus/secretCode/case15_modal_window/memo.md">참고</a>
 ### case16_Progress Bar<a href='https://github.com/hyo814/study-code/blob/main/secret/ProgressBar.md'>정리</a>
-### case17_Carousel 2
+### ☆ case17_Carousel 2
 ### case18_Pagination
 ### case19_Scroll Top
 ### case20_List
