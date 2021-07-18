@@ -11,7 +11,7 @@
 ### case9_Toggle Button<a href='https://github.com/hyo814/study-code/blob/main/secret/Togglebutton.md'>정리</a>
 ### case10_Chips UI
 ### case11_Dropdown Menu
-### case12_Auto Complete
+### case12_Auto Complete<a href='https://github.com/mannue/study/blob/css/fastCampus/secretCode/case12_auto_complete/memo.md'>참고</a>
 ### case13_Instant Search<a href='https://github.com/hyo814/study-code/edit/main/secret/Instant-Search.md'>정리</a>
 ### case14_Stop Watch 2
 ### case15_Modal Window<a href='https://github.com/hyo814/study-code/blob/main/secret/Modal.md'>정리</a>
