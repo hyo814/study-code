@@ -3,24 +3,24 @@
 ### case1_Context Menu
 ### case2_Scroll Spy <a href='https://github.com/mannue/study/blob/css/fastCampus/secretCode/case2_scroll_spy/memo.md'>참고</a>
 ### case3_Infinite Scroll <a href='https://github.com/mannue/study/blob/css/fastCampus/secretCode/case3_InfiniteScroll/memo.md'>참고</a>
-### case4_Dark Mode <a href='https://github.com/hyo814/study-code/blob/main/darkmode.md'>정리</a>
+### case4_Dark Mode
 ### case5_Stop Watch <a href='https://www.notion.so/case-5-02a54e58c9894ca6ac576282853cde1d'>참고</a>
 ### case6_Tabs <a href='https://www.notion.so/Case6-Tabs-5662b3ab5ce54aacb96a0172097ef2c0'>참고</a>
 ### case7_Analog Clock <a href="https://github.com/mannue/study/blob/css/fastCampus/secretCode/case7_analog_clock/memo.md">참고</a>
 ### case8_Carousel<a href="https://github.com/hsw0905/study/tree/main/javascript/carousel">참고</a>
-### case9_Toggle Button<a href="https://github.com/hyo814/study-code/blob/main/togglebutton.md">정리</a>
+### case9_Toggle Button
 ### case10_Chips UI
 ### case11_Dropdown Menu
 ### case12_Auto Complete
 ### case13_Instant Search
 ### case14_Stop Watch 2
-### case15_Modal Window <a href='https://github.com/hyo814/study-code/blob/main/modal.md'>정리</a>
+### case15_Modal Window
 ### case16_Progress Bar
 ### case17_Carousel 2
 ### case18_Pagination
 ### case19_Scroll Top
 ### case20_List
-### case21_Modal Window 2 <a href='https://github.com/hyo814/study-code/blob/main/modal2.md'>정리</a>
+### case21_Modal Window 2
 ### case22_Scroll Indicator
 ### case23_Loading
 ### case24_Search Bar
