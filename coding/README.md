@@ -1,5 +1,5 @@
 # study-code
-# 코딩테스트 예제
+## 코딩테스트 예제
 ## 유용한 사이트들
 <a href='https://blog.naver.com/ggamjige8888/221775348063'>블로그 참조</a>
 ### 서식 예제 ★ case1_Context Menu <a href='#'>참고</a>
