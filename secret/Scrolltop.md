@@ -29,7 +29,24 @@
 
   q5. jQuery - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경  
     - 크로스 브라우징을 고려하여 스크롤 위치를 가져오는 방법  
- 
+#### A)
+
+```js
+$(window).on('mousewheel DOMMouseScroll', function(e) {
+ const delta = e.originalEvent.wheelDelta
+ ? e.originalEvent.wheelDelta
+ : -e.originalEvent.detail;
+
+ (delta < 0)
+ ? $nav.addClass('active')
+ : $nav.removeClass('active');
+});
+
+```  
+##### 해설
+- 스크롤 다운은 배경과 폰트 색상 변경 / 스크롤 업은 이전 상태로 변경
+- 제이쿼리에서도 마우스 휠 이벤트를 적용할 수 있습니다.
+- originalEvent : 제이쿼리의 이벤트 객체에서 지원하지 않는 브라우저 기능을 활용하고자 할 때 사용되는 이벤트 객체
  
  ## 기타
  - <a href="https://ant.design/components/back-top/">스크롤탑 1</a>
