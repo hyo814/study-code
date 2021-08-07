@@ -23,12 +23,70 @@
           *참고 : 자바스크립트에서는 마우스 휠 방향을 알 수 있는 mousewheel,wheel, DOMMouseScroll 이벤트를 제공합니다.  
           
 ## 참고해야할 경우 
-  q4. jQuery - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경  
+  q4. jQuery - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경
+      - 스크롤 위치를 기준으로 적용합니다.
       - 현재 스크롤 위치를 가져옵니다.  
       - 스크롤 위치를 바탕으로 active 클래스를 추가하거나 제거합니다.  
+     
+#### 강의 A)
 
-  q5. jQuery - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경  
-    - 크로스 브라우징을 고려하여 스크롤 위치를 가져오는 방법  
+```js
+$(window).scroll(function () {
+ const $top = $(this).scrollTop();
+ console.log($top);
+ 
+ ($top >= 50 )
+ ? $nav.addClass('active')
+ : $nav.removeClass('active');
+});
+```
+
+##### 해설
+- 스크롤 위치를 기준으로 적용합니다.
+- 스크롤 다운은 배경과 폰트 색상 변경 / 스크롤 업은 변경 상태를 유지하되 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 최초 상태로 변경합니다.
+- scrollTop()는 제이쿼리에서 스크롤의 위치를 가져올 때 사용되는 메서드입니다. 이를 사용하면 자바스크립트 구현 방법 1과 동일한 방식으로 구현할 수 있습니다.
+
+#### 다른 해설 A)
+
+```js
+//main.js
+const scrollThreshold = 50;
+const throttleDelay = 250;
+const debounceDelay = 100;
+
+let latestWindowScrollY = 0;
+
+const handleScrollEvent = () => {
+    const windowScrollY = window.scrollY;
+    if (latestWindowScrollY - windowScrollY > 0) {
+        $nav.addClass('active');
+    } else {
+        $nav.removeClass('active');
+    }
+    latestWindowScrollY = windowScrollY;
+};
+
+const handleThrottleScrollEvent = throttle(handleScrollEvent, throttleDelay);
+
+/**
+ * `throttle`, `debounce` 모두 이용하여 이벤트를 바인딩 하였는데,
+ * - 유저가 너무 빠른속도로 스크롤 방향을 바꾸는경우 `throttleDelay`에 의해 중간과정은 생략될 수 있으나 성능은 유지할 수 있음.
+ */
+$(window).on('scroll', handleThrottleScrollEvent)
+```
+
+##### 해설(외 참고사항들)
+- `throttle`의 딜레이를 늘려 함수가 실행되는 횟수를 줄여 성능을 향상시켰습니다.
+-  `throttle`: 
+-  `debounce`:
+- `throttleDelay`:
+
+  q5. jQuery - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경 
+    - 마우스 휠 방향을 기준으로 적용합니다. 
+    - 크로스 브라우징을 고려하여 스크롤 위치를 가져오는 방법입니다.
+    - 전체를 고려한 case 설계 합니다. (ex.firefox mousewheel DOMMouseScrol)
+    - e.originalEvent를 통해 처리합니다.
+    
 #### A)
 
 ```js
@@ -36,14 +94,17 @@ $(window).on('mousewheel DOMMouseScroll', function(e) {
  const delta = e.originalEvent.wheelDelta
  ? e.originalEvent.wheelDelta
  : -e.originalEvent.detail;
+ 
+ console.log(delta);
 
+//q4와 동일
  (delta < 0)
  ? $nav.addClass('active')
  : $nav.removeClass('active');
 });
 
 ```  
-##### 해설
+##### 자세한 해설
 - 스크롤 다운은 배경과 폰트 색상 변경 / 스크롤 업은 이전 상태로 변경
 - 제이쿼리에서도 마우스 휠 이벤트를 적용할 수 있습니다.
 - originalEvent : 제이쿼리의 이벤트 객체에서 지원하지 않는 브라우저 기능을 활용하고자 할 때 사용되는 이벤트 객체
