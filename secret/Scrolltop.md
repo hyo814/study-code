@@ -9,18 +9,15 @@
   예시 이미지
   <a href='https://ifh.cc/v-lqp7h9' target='_blank'><img src='https://ifh.cc/g/lqp7h9.jpg' border='0'></a>
 ## 문제(Main)
-  q1. javaScript - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경  
-      - 현재 스크롤 위치를 가져옵니다.  
-      - 스크롤 위치를 바탕으로 active 클래스를 추가하거나 제거합니다.  
- ### q1. Javascript - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경
+### q1. javaScript - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경  
+- 현재 스크롤 위치를 가져옵니다.  
+- 스크롤 위치를 바탕으로 active 클래스를 추가하거나 제거합니다.  
 
 #### 강의 A)
-
 - 스크롤 다운은 배경과 폰트 색상 변경 / 스크롤 업은 변경 상태를 유지하닥 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 최초 상태로 변경
 - 스크롤 동작을 감지하기 위해서는 window 객체 또는 document 객체에 addEventListener를 사용하여 스크롤 이벤트를 추가합니다. 스크롤 이벤트는 지금 스크롤 중인지 아닌지를 감지하게 됩니다. 
 
 ##### 해설
-
 ```js
 // window 객체
 window.addEventListener('scroll', function() {
@@ -28,7 +25,6 @@ window.addEventListener('scroll', function() {
 })
 
 // or
-
 window.onscroll = function() {……}
 
 // document 객체
@@ -51,8 +47,7 @@ section1.addEventListener('scroll', function() {……})
 window.addEventListener('scroll', function() {
  const top = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 })
-```
-![example_image](./image.jpg)
+```  
 
 - 스크롤 특정 위치를 가져올 수 있게 되었다면 조건문 또는 삼항 연산자를 사용하여 참일 경우에는 active 클래스를 추가하고 거짓을 경우에는 제거해주는 코드를 작성합니다.
 
@@ -65,10 +60,7 @@ window.addEventListener('scroll', function() {
  : nav.classList.remove(‘active');
 })
 ```
-
-### q1. Javascript - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경
-
-#### A)
+#### 다른 방법 A)
 
 ```js
 // main.js
@@ -133,14 +125,12 @@ const debounce = (func, delay) => {
     - @see https://www.npmjs.com/package/debounce
 
 
-  q2. javaScript - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경합니다.  
+### q2. javaScript - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경합니다.  
       - 현재 스크롤 위치를 가져옵니다.  
       - oldvalue, 스크롤의 위치와 연산 작업을 하여 active 클래스를 추가하거나 제거합니다.  
       - oldvalue를 스크롤 위치로 변경합니다.  
 
-### q2. Javascript - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경
-
-#### A)
+#### 강의 A)
 
 ```js
 let oldValue = 0;
@@ -160,9 +150,7 @@ window.addEventListener('scroll', function(e){
 - 기준 값 - 변경 값 연산이 음수면 스크롤 다운, 양수면 스크롤 업입니다.
 - 기준 값은 항상 변경 값으로 치환하여 새롭게 갱신을 해야 합니다.
 
-### q2. Javascript - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경
-
-#### A)
+#### 다른 방법 A)
 
 ```js
 // main.js
@@ -214,8 +202,7 @@ const debounce = (func, delay) => {
         procId = setTimeout(() => func(...args), delay);
     }
 };
-```
-
+```  
 
 ##### 해설
 - 기본적인 접근 방법은 `window` 객체에 `scroll` 이벤트를 바인딩하고, 스크롤 이벤트가 발생할때 가장 마지막으로 실행된 스크롤 이벤트에서 `window.scrollY` 값을 `latestWindowScrollY` 변수에 저장하고
@@ -226,13 +213,12 @@ const debounce = (func, delay) => {
     - @see https://www.npmjs.com/package/lodash.throttle
 
 
-  q3. javaScript - 자바스크립트에서 제공하는 마우수 휠 이벤트 동작 감지 기능을 사용해서 구현  
-      - 마우스 휠 이벤트 동작을 감지하여 동작시킵니다.  
-          *참고 : 자바스크립트에서는 마우스 휠 방향을 알 수 있는 mousewheel,wheel, DOMMouseScroll 이벤트를 제공합니다.  
+### q3. javaScript - 자바스크립트에서 제공하는 마우수 휠 이벤트 동작 감지 기능을 사용해서 구현  
+- 마우스 휠 이벤트 동작을 감지하여 동작시킵니다.  
+  *참고 : 자바스크립트에서는 마우스 휠 방향을 알 수 있는 mousewheel,wheel, DOMMouseScroll 이벤트를 제공합니다.  
           
           
 #### 강의 A)
-
 ```js
 window.addEventListener('wheel', mouseWheelEvent);
 window.addEventListener('DOMMouseScroll', mouseWheelEvent);
@@ -265,10 +251,7 @@ function mouseWheelEvent(e) {
 - mousewheel은 비표준으로, wheel을 사용해야 합니다.
 - 파이어폭스에서는 DOMMouseScroll을 사용해야 합니다.
 
-
-
-#### 다른 해설 A)
-
+#### 다른 방법 A)
 ```js
 // main.js
 const scrollThreshold = 50;
@@ -327,9 +310,7 @@ const debounce = (func, delay) => {
 - [!] `mousewheel` 이벤트를 사용하는 경우 (마우스가 아닌)키보드 또는 스크린리더등으로 스크롤을 제어하는 경우 이벤트를 트리거 할 수 없습니다. 주의하세요!
 
 
-
-
-## ETC. 이후부터는 제이쿼리 입니다.          
+----------------------------------------------------------------------------------------------------        
 ### 참고해야할 경우 
   q4. jQuery - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경
       - 스크롤 위치를 기준으로 적용합니다.
