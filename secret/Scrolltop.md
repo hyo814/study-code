@@ -8,7 +8,7 @@
   
   예시 이미지
   <a href='https://ifh.cc/v-lqp7h9' target='_blank'><img src='https://ifh.cc/g/lqp7h9.jpg' border='0'></a>
-## 문제(Main)
+## 문제(Main) - 주로 강의를 기반으로 설명을 하지만 이해가 되면 다른 설명도 해석해보기
 ### q1. javaScript - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경  
 - 현재 스크롤 위치를 가져옵니다.  
 - 스크롤 위치를 바탕으로 active 클래스를 추가하거나 제거합니다.  
