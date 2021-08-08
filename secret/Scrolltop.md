@@ -22,6 +22,46 @@
       - 마우스 휠 이벤트 동작을 감지하여 동작시킵니다.  
           *참고 : 자바스크립트에서는 마우스 휠 방향을 알 수 있는 mousewheel,wheel, DOMMouseScroll 이벤트를 제공합니다.  
           
+ 1
+### q3. Javascript - 자바스크립트에서 제공하는 마우수 휠 이벤트 동작 감지 기능을 사용해서 구현
+
+#### 강의 A)
+
+```js
+window.addEventListener('wheel', mouseWheelEvent);
+window.addEventListener('DOMMouseScroll', mouseWheelEvent);
+
+function mouseWheelEvent(e) {
+ const delta = e.wheelDelta ? e.wheelDelta : -e.detail;
+ (delta < 0)
+ ? nav.classList.add('active')
+ : nav.classList.remove('active');
+}
+
+// or
+
+const isFireFox = (navigator.userAgent.indexOf('Firefox') !== -1);
+const wheelEvt = isFireFox ? 'DOMMouseScroll' : 'wheel';
+
+window.addEventListener(wheelEvt, mouseWheelEvent);
+
+function mouseWheelEvent(e) {
+ const delta = e.wheelDelta ? e.wheelDelta : -e.detail;
+ (delta < 0)
+ ? nav.classList.add('active')
+ : nav.classList.remove('active');
+}
+
+```
+
+##### 해설
+- 자바스크립트에서는 마우스 휠 방향을 알 수 있는 mousewheel, wheel, DOMMouseScroll 이벤트를 제공합니다.
+- mousewheel은 비표준으로, wheel을 사용해야 합니다.
+- 파이어폭스에서는 DOMMouseScroll을 사용해야 합니다.
+
+
+
+          
 ## 참고해야할 경우 
   q4. jQuery - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경
       - 스크롤 위치를 기준으로 적용합니다.
