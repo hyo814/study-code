@@ -121,8 +121,6 @@ const debounce = (func, delay) => {
 ##### 해설
 - 기본적인 접근 방법은 `window` 객체에 `scroll` 이벤트를 바인딩하고, 스크롤 이벤트가 발생할때 `window.scrollY` 값을 확인하여 클래스를 적용하는 것입니다.
 - 스크롤 이벤트는 스크롤이 진행되는동안 짧은시간내 수십여번 실행될 수 있기 때문에 성능문제를 고려해야 하는데, 이러한 부부은 `debounce` 유틸을 구현하여 해결하였습니다.
-- ✨ `debounce` 유틸은 `throttle`과 함께 개발시 자주 사용되는 라이브러리 입니다. 사용하는 방법과 원리를 익혀두시면 좋습니다.
-    - @see https://www.npmjs.com/package/debounce
 
 
 ### q2. javaScript - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경합니다.  
@@ -400,6 +398,7 @@ $(window).on('mousewheel DOMMouseScroll', function(e) {
  
  ## 기타
  - <a href="https://ant.design/components/back-top/">스크롤탑 1</a>
+ - <a href="https://www.npmjs.com/package/debounce">2</a>
 
 
  
