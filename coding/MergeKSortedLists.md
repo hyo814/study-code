@@ -15,6 +15,7 @@ Merge all the linked-lists into one sorted linked-list and return it.
 <a href='https://ifh.cc/v-5SBdvu' target='_blank'><img src='https://ifh.cc/g/5SBdvu.png' border='0'></a>
 
 ## (풀이)
+```js
 let array = [];
 let mergeKLists = function(lists) {
     //for 문을 이용
@@ -44,3 +45,4 @@ function getValue(node) {
     }
 }
 
+```
