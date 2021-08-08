@@ -124,32 +124,33 @@ const debounce = (func, delay) => {
 
 
 ### q2. javaScript - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경합니다.  
-      - 현재 스크롤 위치를 가져옵니다.  
-      - oldvalue, 스크롤의 위치와 연산 작업을 하여 active 클래스를 추가하거나 제거합니다.  
-      - oldvalue를 스크롤 위치로 변경합니다.  
+- 현재 스크롤 위치를 가져옵니다.  
+- oldvalue, 스크롤의 위치와 연산 작업을 하여 active 클래스를 추가하거나 제거합니다.  
+- oldvalue를 스크롤 위치로 변경합니다.  
 
 #### 강의 A)
-
 ```js
+// 최초상태의 값은 0이고 실시간으로 바뀌는 값은 new입니다.
 let oldValue = 0;
 window.addEventListener('scroll', function(e){
  const newValue = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
- // 음수는 스크롤 다운, 양수는 스크롤 업
+ // 연산작업으로는 이렇게 진행됩니다.
+ // 음수는 스크롤 다운, 스크롤을 내리는 중임을 의미됩니다.
+ // 양수는 스크롤 업, 실시간으로 변경되는 재할당의 값을 의미됩니다.
  if(oldValue - newValue < 0) nav.classList.add('active');
  if(oldValue - newValue > 0) nav.classList.remove('active');
- // 기준 값을 변경 값으로 치환
+ // 기준 값을 변경 값으로 치환, 최종값으로는 확인 되어야합니다.
  oldValue = newValue;
 });
 ```
 
 ##### 해설
-- 스크롤 다운은 배경과 폰트 색상 변경 / 스크롤 업은 이전 상태로 변경
+- 스크롤 다운은 배경과 폰트 색상 변경 / 스크롤 업은 이전 상태로 변경합니다.
 - 최초 기준 값을 설정한 후 기준 값 - 변경 값을 연산하여 스크롤 다운 / 스크롤 업 상태를 판단할 수 있습니다.
 - 기준 값 - 변경 값 연산이 음수면 스크롤 다운, 양수면 스크롤 업입니다.
 - 기준 값은 항상 변경 값으로 치환하여 새롭게 갱신을 해야 합니다.
 
 #### 다른 방법 A)
-
 ```js
 // main.js
 const navEl = document.querySelector('nav');
@@ -202,6 +203,7 @@ const debounce = (func, delay) => {
 };
 ```  
 
+
 ##### 해설
 - 기본적인 접근 방법은 `window` 객체에 `scroll` 이벤트를 바인딩하고, 스크롤 이벤트가 발생할때 가장 마지막으로 실행된 스크롤 이벤트에서 `window.scrollY` 값을 `latestWindowScrollY` 변수에 저장합니다.
 - `latestWindowScrollY` 변수에서 `window.scrollY` 값을 뺀 결과 값이 0보다 큰 경우 `active` 클래스를 부여, 그렇지 않은경우 제거하는 원리입니다.
@@ -238,7 +240,6 @@ function mouseWheelEvent(e) {
  ? nav.classList.add('active')
  : nav.classList.remove('active');
 }
-
 ```
 
 ##### 자세한 해설
