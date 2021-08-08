@@ -206,9 +206,7 @@ const debounce = (func, delay) => {
 - 기본적인 접근 방법은 `window` 객체에 `scroll` 이벤트를 바인딩하고, 스크롤 이벤트가 발생할때 가장 마지막으로 실행된 스크롤 이벤트에서 `window.scrollY` 값을 `latestWindowScrollY` 변수에 저장하고
 - `latestWindowScrollY` 변수에서 `window.scrollY` 값을 뺀 결과 값이 0보다 큰 경우 `active` 클래스를 부여, 그렇지 않은경우 제거하는 원리입니다.
 - 스크롤 이벤트는 스크롤이 진행되는동안 짧은시간내 수십여번 실행될 수 있기 때문에 성능문제를 고려해야 하는데, 이러한 부부은 `throttle` 유틸을 구현하여 해결하였습니다.
-- 이전에 구현했던 `debounce`와 다른점은, `throttle` 이벤트는 호출되는 즉시 실행이 된다는것 입니다. `debounce`와 `throttle`의 차이를 잘 알아두었다가 활용하면 좋습니다.
 
-  
 
 ### q3. javaScript - 자바스크립트에서 제공하는 마우수 휠 이벤트 동작 감지 기능을 사용해서 구현  
 - 마우스 휠 이벤트 동작을 감지하여 동작시킵니다.  
