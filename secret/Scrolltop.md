@@ -217,10 +217,12 @@ const debounce = (func, delay) => {
           
 #### 강의 A)
 ```js
+// firefox에서는 제공되는 경우가 아닌 부분도 고려해야합니다.
 window.addEventListener('wheel', mouseWheelEvent);
 window.addEventListener('DOMMouseScroll', mouseWheelEvent);
 
 function mouseWheelEvent(e) {
+// -e.detail로 음수 확인합니다.
  const delta = e.wheelDelta ? e.wheelDelta : -e.detail;
  (delta < 0)
  ? nav.classList.add('active')
@@ -228,8 +230,10 @@ function mouseWheelEvent(e) {
 }
 
 // or
-
+// firefox인지 아닌지 구별을 하면 한번에 해결 할 수 있습니다.
+//navigator.userAgent.indexOf('Firefox')로 탐색합니다.
 const isFireFox = (navigator.userAgent.indexOf('Firefox') !== -1);
+// 각각에 맞는 적용을 해야합니다.
 const wheelEvt = isFireFox ? 'DOMMouseScroll' : 'wheel';
 
 window.addEventListener(wheelEvt, mouseWheelEvent);
