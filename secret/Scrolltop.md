@@ -19,7 +19,7 @@
 
 ##### 해설
 ```js
-// window 객체
+// window 객체- 스크롤을 전달을 하면 이벤트를 감지할 수 있습니다.
 window.addEventListener('scroll', function() {
  console.log(‘scrolling’);
 })
@@ -34,7 +34,8 @@ document.addEventListener('scroll', function() {……})
 - 만약 특정 영역 안에서 스크롤 이벤트를 적용하고 싶다면 아래와 같이 변경합니다. 
 
 ```js
-// 선택자로 특정 영역을 가리킨 후 스크롤 이벤트 추가
+// 선택자로 특정 영역을 가리킨 후 스크롤 이벤트 추가를 직접 선택 하여 처리 합니다.
+// 특정 영역 지정을 하도록 유도 합니다.
 const section1 = document.querySelector('#section-1');
 
 section1.addEventListener('scroll', function() {……})
@@ -45,6 +46,8 @@ section1.addEventListener('scroll', function() {……})
 ```js
 // window 객체
 window.addEventListener('scroll', function() {
+//대부분의 지원이 됩니다.
+//다시 말해서, 크로스 브라우저를 위하여 scrollY, pageYOffset, scrollTop에 맞도록 설계 합니다.
  const top = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 })
 ```  
@@ -55,6 +58,8 @@ window.addEventListener('scroll', function() {
 // window 객체
 window.addEventListener('scroll', function() {
  const top = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+ console.log(top)
+ // 가독성을 위해 if문이 아닌 삼향 연산자를 통해 참과 거짓을 구분 합니다.
  (top >= 50 )
  ? nav.classList.add('active')
  : nav.classList.remove(‘active');
