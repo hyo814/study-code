@@ -1,7 +1,17 @@
 <a href="https://leetcode.com/tag/linked-list/">전체 링크드 리스트 문제 </a>  
-<a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/">참고해야할 사이트</a>   
+<a href="https://leetcode.com/problems/merge-k-sorted-lists/description/">참고해야할 사이트</a>   
 
 ## (영어)
+You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+Merge all the linked-lists into one sorted linked-list and return it.
+
+- k == lists.length
+- 0 <= k <= 10^4
+- 0 <= lists[i].length <= 500
+- -10^4 <= lists[i][j] <= 10^4
+- lists[i] is sorted in ascending order.
+- The sum of lists[i].length won't exceed 10^4.
+<a href='https://ifh.cc/v-b7zf4W' target='_blank'><img src='https://ifh.cc/g/b7zf4W.png' border='0'></a>
 
 ## (해석)
 
