@@ -8,7 +8,7 @@ Given the head of a sorted linked list, delete all duplicates such that each ele
 - The list is guaranteed to be sorted in ascending order.
 
 ## (해석)
-
+head정렬된 연결 목록이 주어지면 각 요소가 한 번만 나타나도록 모든 중복 항목을 삭제합니다 . 돌아 가기 링크 된 목록을 분류 뿐만 아니라 .
 
 ## (풀이) 주석(ㅇ)
 
