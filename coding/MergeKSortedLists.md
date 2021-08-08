@@ -1,41 +1,20 @@
 <a href="https://leetcode.com/tag/linked-list/">전체 링크드 리스트 문제 </a>  
 <a href="https://leetcode.com/problems/merge-k-sorted-lists/description/">참고해야할 사이트</a>    
 ## (영어)
+You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+Merge all the linked-lists into one sorted linked-list and return it.
 
+- k == lists.length
+- 0 <= k <= 10^4
+- 0 <= lists[i].length <= 500
+- -10^4 <= lists[i][j] <= 10^4
+- lists[i] is sorted in ascending order.
+- The sum of lists[i].length won't exceed 10^4.
 
 ## (해석)
+<a href='https://ifh.cc/v-5SBdvu' target='_blank'><img src='https://ifh.cc/g/5SBdvu.png' border='0'></a>
 
 ## (풀이) 주석(ㅇ)
 
-             
-```    
-
 
 ## (풀이) 주석(x )
-```js
-let calPoints = function(ops) {
-    const points = [];
-    ops.forEach((op) => {
-        switch (op) {
-            case '+':
-                points.push(points[points.length - 1] + points[points.length - 2]);
-                break;
-            case 'D':
-                points.push(points[points.length - 1] * 2);
-                break;
-            case 'C':
-                points.pop();
-                break;
-            default:
-                points.push(parseInt(op));
-                break;
-        }
-    });
-    
-    return points.reduce((success, point) => success + point);
-};
-```
-## 기타
-### 계산기 만들기
-- <a href="https://blog.naver.com/ggamjige8888/221749074687">1</a>
-- <a href="https://blog.naver.com/ggamjige8888/221749068131">2</a>
