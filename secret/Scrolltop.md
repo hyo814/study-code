@@ -60,6 +60,70 @@ function mouseWheelEvent(e) {
 - 파이어폭스에서는 DOMMouseScroll을 사용해야 합니다.
 
 
+2
+### q3. Javascript - 자바스크립트에서 제공하는 마우수 휠 이벤트 동작 감지 기능을 사용해서 구현
+
+#### A)
+
+```js
+// main.js
+const scrollThreshold = 50;
+const debounceDelay = 10;
+
+/**
+ * q1 문제와 동일한 방법으로 구현, Jquery에서 지원하는 함수를 응용하여 DOM을 제어
+ */
+const handleThrottleScrollEvent = debounce(() => {
+    const windowScrollY = window.scrollY;
+    if (scrollThreshold < windowScrollY) {
+        $nav.addClass('active');
+    } else {
+        $nav.removeClass('active');
+    }
+    latestWindowScrollY = windowScrollY;
+}, debounceDelay);
+
+/**
+ * [!] `mousewheel` 이벤트를 사용하는 경우 (마우스가 아닌)키보드 또는 스크린리더등으로 
+ * 스크롤을 제어하는 경우 이벤트를 트리거 할 수 없음
+ */
+$(window).on('scroll', handleThrottleScrollEvent);
+```
+
+```js
+// debounce.js
+/**
+ * 입력된 `func` 함수가 연속하여 호출되도 마지막으로 "함수가 호출된 시간 + `delay`" 시간이후에 1회만 실행
+ * 
+ * @param {function} func 
+ * @param {number} delay 단위는 milliseconds 입니다.
+ */
+const debounce = (func, delay) => {
+    /**
+     * `setTimeout` 아이디를 저장
+     */
+    let procId = null;
+    return (...args) => {
+        if (procId) {
+            /**
+             * `procId`가 존재하면 실행되지 않도록 제거
+             */
+            window.clearTimeout(procId);
+        }
+        /**
+         * `delay` 이후 해당 함수가 실행되도록 `setTimeout`에 태스크를 등록
+         */
+        procId = setTimeout(() => func(...args), delay);
+    }
+};
+```
+
+##### 해설
+- 기본적인 접근 방법은 `q1` 문제와 동일합니다. `scroll` 이벤트와 `mousewheel` 이벤트 차이에 대해 알아두시면 도움이 될 것 같습니다.
+- [!] `mousewheel` 이벤트를 사용하는 경우 (마우스가 아닌)키보드 또는 스크린리더등으로 스크롤을 제어하는 경우 이벤트를 트리거 할 수 없습니다. 주의하세요!
+
+
+
 
           
 ## 참고해야할 경우 
