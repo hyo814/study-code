@@ -14,7 +14,33 @@ Merge all the linked-lists into one sorted linked-list and return it.
 ## (해석)
 <a href='https://ifh.cc/v-5SBdvu' target='_blank'><img src='https://ifh.cc/g/5SBdvu.png' border='0'></a>
 
-## (풀이) 주석(ㅇ)
+## (풀이)
+let array = [];
+let mergeKLists = function(lists) {
+    //for 문을 이용
+    for(let i=0; i<lists.length; i++) {
+        getValue(lists[i]);
+    }
+    // sort 사용    
+    array.sort((a,b) => b-a);
+    
+    let answer = new ListNode(0);
+    let temp = answer;
+    
+    //while 문
+    while(array.length > 0) {
+    //new ListNode 사용
+        temp.next = new ListNode(array.pop());
+        temp = temp.next;
+    }
+    return answer.next;
+};
 
+function getValue(node) {
+// node 사용
+    while(node) {
+        array.push(node.val);
+        node = node.next;
+    }
+}
 
-## (풀이) 주석(x )
