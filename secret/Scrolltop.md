@@ -12,12 +12,220 @@
   q1. javaScript - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경  
       - 현재 스크롤 위치를 가져옵니다.  
       - 스크롤 위치를 바탕으로 active 클래스를 추가하거나 제거합니다.  
- 
+ ### q1. Javascript - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경
+
+#### 강의 A)
+
+- 스크롤 다운은 배경과 폰트 색상 변경 / 스크롤 업은 변경 상태를 유지하닥 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 최초 상태로 변경
+- 스크롤 동작을 감지하기 위해서는 window 객체 또는 document 객체에 addEventListener를 사용하여 스크롤 이벤트를 추가합니다. 스크롤 이벤트는 지금 스크롤 중인지 아닌지를 감지하게 됩니다. 
+
+##### 해설
+
+```js
+// window 객체
+window.addEventListener('scroll', function() {
+ console.log(‘scrolling’);
+})
+
+// or
+
+window.onscroll = function() {……}
+
+// document 객체
+document.addEventListener('scroll', function() {……})
+
+```
+- 만약 특정 영역 안에서 스크롤 이벤트를 적용하고 싶다면 아래와 같이 변경합니다. 
+
+```js
+// 선택자로 특정 영역을 가리킨 후 스크롤 이벤트 추가
+const section1 = document.querySelector('#section-1');
+
+section1.addEventListener('scroll', function() {……})
+```
+
+- 다음 스크롤 위치를 가져오는 코드를 추가합니다. 이 때 크로스 브라우징을 고려해서 복수의 코드를 입력해야 합니다. 각 코드가 지원하는 브라우저는 아래 표에서 확인할 수 있습니다. 
+
+```js
+// window 객체
+window.addEventListener('scroll', function() {
+ const top = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+})
+```
+![example_image](./image.jpg)
+
+- 스크롤 특정 위치를 가져올 수 있게 되었다면 조건문 또는 삼항 연산자를 사용하여 참일 경우에는 active 클래스를 추가하고 거짓을 경우에는 제거해주는 코드를 작성합니다.
+
+```js
+// window 객체
+window.addEventListener('scroll', function() {
+ const top = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+ (top >= 50 )
+ ? nav.classList.add('active')
+ : nav.classList.remove(‘active');
+})
+```
+
+### q1. Javascript - 스크롤을 다시 올릴 경우 변경된 상태를 유지하다가 더 이상 올릴 수 없을 때(최상단에 스크롤이 위치할 때) 이전 상태로 변경
+
+#### A)
+
+```js
+// main.js
+const navEl = document.querySelector('nav');
+const scrollThreshold = 50;
+const debounceDelay = 10;
+
+/**
+ * 스크롤 이벤트가 연속적으로 발생하는 경우 성능저하를 방지하기 위해 `debounce` 유틸을 이용하여, 
+ * 마지막 스크롤 이벤트가 발생하고 일정시간(debounceDelay=10ms) 이상 시간이 지연됐을때 이벤트 핸들러를 1회만 실행
+ */
+const handleDebounceScrollEvent = debounce(() => {
+    const windowScrollY = window.scrollY;
+    if (windowScrollY > scrollThreshold) {
+        /**
+         * 스크롤된 값이 임계값 보다 큰 경우 `nav` 엘리먼트에 `active` 클래스 추가
+         */
+        navEl.classList.add('active');
+    } else {
+        /**
+         * 스크롤된 값이 임계값 보다 큰 경우 `nav` 엘리먼트에 `active` 클래스 제거
+         */
+        navEl.classList.remove('active');
+    }
+}, debounceDelay);
+
+window.addEventListener('scroll', handleDebounceScrollEvent);
+```
+
+```js
+// debounce.js
+/**
+ * 입력된 `func` 함수가 연속하여 호출되도 마지막으로 "함수가 호출된 시간 + `delay`" 시간이후에 1회만 실행
+ * 
+ * @param {function} func 
+ * @param {number} delay 단위는 milliseconds 입니다.
+ */
+const debounce = (func, delay) => {
+    /**
+     * `setTimeout` 아이디를 저장
+     */
+    let procId = null;
+    return (...args) => {
+        if (procId) {
+            /**
+             * `procId`가 존재하면 실행되지 않도록 제거
+             */
+            window.clearTimeout(procId);
+        }
+        /**
+         * `delay` 이후 해당 함수가 실행되도록 `setTimeout`에 태스크를 등록
+         */
+        procId = setTimeout(() => func(...args), delay);
+    }
+};
+```
+
+##### 해설
+- 기본적인 접근 방법은 `window` 객체에 `scroll` 이벤트를 바인딩하고, 스크롤 이벤트가 발생할때 `window.scrollY` 값을 확인하여 클래스를 적용하는 것입니다.
+- 스크롤 이벤트는 스크롤이 진행되는동안 짧은시간내 수십여번 실행될 수 있기 때문에 성능문제를 고려해야 하는데, 이러한 부부은 `debounce` 유틸을 구현하여 해결하였습니다.
+- ✨ `debounce` 유틸은 `throttle`과 함께 개발시 자주 사용되는 라이브러리 입니다. 사용하는 방법과 원리를 익혀두시면 좋습니다.
+    - @see https://www.npmjs.com/package/debounce
+
+
   q2. javaScript - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경합니다.  
       - 현재 스크롤 위치를 가져옵니다.  
       - oldvalue, 스크롤의 위치와 연산 작업을 하여 active 클래스를 추가하거나 제거합니다.  
       - oldvalue를 스크롤 위치로 변경합니다.  
-      
+
+### q2. Javascript - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경
+
+#### A)
+
+```js
+let oldValue = 0;
+window.addEventListener('scroll', function(e){
+ const newValue = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+ // 음수는 스크롤 다운, 양수는 스크롤 업
+ if(oldValue - newValue < 0) nav.classList.add('active');
+ if(oldValue - newValue > 0) nav.classList.remove('active');
+ // 기준 값을 변경 값으로 치환
+ oldValue = newValue;
+});
+```
+
+##### 해설
+- 스크롤 다운은 배경과 폰트 색상 변경 / 스크롤 업은 이전 상태로 변경
+- 최초 기준 값을 설정한 후 기준 값 - 변경 값을 연산하여 스크롤 다운 / 스크롤 업 상태를 판단할 수 있습니다.
+- 기준 값 - 변경 값 연산이 음수면 스크롤 다운, 양수면 스크롤 업입니다.
+- 기준 값은 항상 변경 값으로 치환하여 새롭게 갱신을 해야 합니다.
+
+### q2. Javascript - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경
+
+#### A)
+
+```js
+// main.js
+const navEl = document.querySelector('nav');
+const scrollThreshold = 50;
+const throttleDelay = 100;
+
+/**
+ * 스크롤 이벤트가 연속적으로 발생하는 경우 성능저하를 방지하기 위해 `debounce` 유틸을 이용하여, 
+ * 마지막 스크롤 이벤트가 발생하고 일정시간(throttle=100ms) 이상 시간이 지연됐을때 이벤트 핸들러를 1회만 실행
+ */
+let latestWindowScrollY = 0;
+const handleThrottleScrollEvent = throttle(() => {
+    const windowScrollY = window.scrollY;
+    if (latestWindowScrollY - windowScrollY > 0) {
+        navEl.classList.remove('active');
+    } else {
+        navEl.classList.add('active');
+    }
+    latestWindowScrollY = windowScrollY;
+}, throttleDelay);
+
+window.addEventListener('scroll', handleThrottleScrollEvent);
+```
+
+```js
+// debounce.js
+/**
+ * 입력된 `func` 함수가 연속하여 호출되도 마지막으로 "함수가 호출된 시간 + `delay`" 시간이후에 1회만 실행
+ * 
+ * @param {function} func 
+ * @param {number} delay 단위는 milliseconds 입니다.
+ */
+const debounce = (func, delay) => {
+    /**
+     * `setTimeout` 아이디를 저장
+     */
+    let procId = null;
+    return (...args) => {
+        if (procId) {
+            /**
+             * `procId`가 존재하면 실행되지 않도록 제거
+             */
+            window.clearTimeout(procId);
+        }
+        /**
+         * `delay` 이후 해당 함수가 실행되도록 `setTimeout`에 태스크를 등록
+         */
+        procId = setTimeout(() => func(...args), delay);
+    }
+};
+```
+
+
+##### 해설
+- 기본적인 접근 방법은 `window` 객체에 `scroll` 이벤트를 바인딩하고, 스크롤 이벤트가 발생할때 가장 마지막으로 실행된 스크롤 이벤트에서 `window.scrollY` 값을 `latestWindowScrollY` 변수에 저장하고
+- `latestWindowScrollY` 변수에서 `window.scrollY` 값을 뺀 결과 값이 0보다 큰 경우 `active` 클래스를 부여, 그렇지 않은경우 제거하는 원리입니다.
+- 스크롤 이벤트는 스크롤이 진행되는동안 짧은시간내 수십여번 실행될 수 있기 때문에 성능문제를 고려해야 하는데, 이러한 부부은 `throttle` 유틸을 구현하여 해결하였습니다.
+- 이전에 구현했던 `debounce`와 다른점은, `throttle` 이벤트는 호출되는 즉시 실행이 된다는것 입니다. `debounce`와 `throttle`의 차이를 잘 알아두었다가 활용하면 좋습니다.
+- ✨ `throttle` 유틸은 `debounce`과 함께 개발시 자주 사용되는 라이브러리 입니다. 사용하는 방법과 원리를 익혀두시면 좋습니다.
+    - @see https://www.npmjs.com/package/lodash.throttle
+
+
   q3. javaScript - 자바스크립트에서 제공하는 마우수 휠 이벤트 동작 감지 기능을 사용해서 구현  
       - 마우스 휠 이벤트 동작을 감지하여 동작시킵니다.  
           *참고 : 자바스크립트에서는 마우스 휠 방향을 알 수 있는 mousewheel,wheel, DOMMouseScroll 이벤트를 제공합니다.  
