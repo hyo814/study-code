@@ -9,9 +9,9 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 # 해석
 입출력 값은 이와 같습니다.  
 입력은 ["eat","tea","tan","ate","nat","bat"] 이면서      
-출력은 [["bat"],["nat","tan"],["ate","eat","tea"]] 됩니다.
-이때 이루어진 알파벳으로 해결 할 수 있는지 확인을 해봅니다.
-입력 값을 기반으로 봤을때 aet, ant, abt의 순으로 형성이 되면서 이루어 질 것을 예상합니다.
+출력은 [["bat"],["nat","tan"],["ate","eat","tea"]] 됩니다.  
+이때 이루어진 알파벳으로 해결 할 수 있는지 확인을 해봅니다.  
+입력 값을 기반으로 봤을때 aet, ant, abt의 순으로 형성이 되면서 이루어 질 것을 예상합니다.  
 이때 aet의 경우 ["ate","eat","tea"] 이면서,   
 다음으로는 ant의 경우 ["nat","tan"] 이고,  
 마지막으로는 abt의 경우에는 ["bat"]가 됩니다.
