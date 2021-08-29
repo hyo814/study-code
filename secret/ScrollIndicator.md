@@ -94,8 +94,9 @@ window.addEventListener('scroll', function () {
 
 ### 기타( 검색 할 수 있는 목록들)
 1. infinity scroll (*case3을 참고 할 수 있음*)
-2. scrollTop(*case19을 참고 할 수 있음*) &nbsp;<a href="https://github.com/hyo814/study-code/blob/main/secret/Scrolltop.md">hyo814문서 ScrollTop</a>
-3. pagination(*case18을 참고 할 수 있음*) &nbsp; <a href='https://github.com/hyo814/study-code/blob/main/secret/Pagination.md'>hyo814문서 Pagination</a>
+2. load more <a href='https://codesandbox.io/s/github/leighhalliday/demo-infinite-scroll/tree/master/'>참고</a>
+3. scrollTop(*case19을 참고 할 수 있음*) &nbsp;<a href="https://github.com/hyo814/study-code/blob/main/secret/Scrolltop.md">hyo814문서 ScrollTop</a>
+4. pagination(*case18을 참고 할 수 있음*) &nbsp; <a href='https://github.com/hyo814/study-code/blob/main/secret/Pagination.md'>hyo814문서 Pagination</a>
 
 4. transfrom css &nbsp;<a href="https://developer.mozilla.org/ko/docs/Web/CSS/transform">transform</a>
 5. calc &nbsp;<a href="https://developer.mozilla.org/ko/docs/Web/CSS/calc()">calc</a>
