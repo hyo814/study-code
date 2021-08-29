@@ -13,7 +13,7 @@ Q. 요구사항 : 스크롤 시 현재 남의 컨텐츠의 분량을 화면에 �
 
 
 ### 문제
-- JavaScript로 해당 기능을 구현하시오.
+- JavaScript로 해당 기능을 구현합니다.
 1. scrollBar의 width값을 변경하는 방식으로 indicator를 적용합니다.
 2. 스크롤 시 translateX를 사용하여 scrollBar 위치를 변경합니다.
 
@@ -58,7 +58,7 @@ window.addEventListener('scroll', function () {
 
 q2. 두 번째 방법 (2) : translateX 활용합니다.
 - scrollBar의 width 값을 100%로 변경한 다음 최초 위치를 화면 왼쪽 영역 바깥으로 이동합니다.
-- 스크롤 시 translateX를 사용하여 scrollBar 위치를 변경합니다
+- 스크롤 시 translateX를 사용하여 scrollBar 위치를 변경합니다.
 
 
 ```js
@@ -71,9 +71,10 @@ window.addEventListener('scroll', function () {
 
   const contentHeight = scrollHeight - clientHeight;
   const percent = (scrollTop / contentHeight) * 100;
-
-  scrollBar.style.transition = 'transform 0.3s ease-out';
-  scrollBar.style.transform = `translateX(-${100 - percent}%)`;
+  
+  // css를 js로 제어를 합니다. (transfformX)
+  scrollBar.style.transition = 'transform 0.3s ease-out'; // 이벤트 추가
+  scrollBar.style.transform = `translateX(-${100 - percent}%)`; // 위치 이동
 })
 ```
 
@@ -84,7 +85,8 @@ window.addEventListener('scroll', function () {
   left: 0;
   height: 4px;
   background-color: blue;
-
+  
+  // 두 번째 방법은 css 가 다름 : 100 퍼센트부터 카운트합니다. 위치를 변경하는 방식을 사용합니다.
   width: 100%;
   transform: translateX(-100%);
 }
@@ -95,6 +97,6 @@ window.addEventListener('scroll', function () {
 2. scrollTop(*case19을 참고 할 수 있음*)
 3. pagination(*case18을 참고 할 수 있음*)
 
-4. transfrom css <a href="https://developer.mozilla.org/ko/docs/Web/CSS/transform">transform</a>
-5. calc< a href="https://developer.mozilla.org/ko/docs/Web/CSS/calc()">calc</a>
+4. transfrom css &nbsp; &nbsp; <a href="https://developer.mozilla.org/ko/docs/Web/CSS/transform">transform</a>
+5. calc &nbsp;&nbsp;<a href="https://developer.mozilla.org/ko/docs/Web/CSS/calc()">calc</a>
 
