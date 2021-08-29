@@ -371,9 +371,9 @@ $(window).on('scroll', handleThrottleScrollEvent)
 
 ##### 해설(외 참고사항들)
 - `throttle`의 딜레이를 늘려 함수가 실행되는 횟수를 줄여 성능을 향상시켰습니다.
--  `throttle`: 
--  `debounce`:
-- `throttleDelay`:
+-  `throttle`: 입력 주기를 방해하지 않고, 일정 시간 동안의 입력을 모와서 한번씩 출력을 제한 합니다.
+-  `debounce`: 입력 주기가 끝나면 출력합니다.
+- <a href="https://pks2974.medium.com/throttle-%EC%99%80-debounce-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-2335a9c426ff">참고</a>
 
   q5. jQuery - 스크롤을 다시 올릴 경우 곧바로 배경/폰트 색상을 이전 상태로 변경 
     - 마우스 휠 방향을 기준으로 적용합니다. 
