@@ -35,5 +35,5 @@ The number of nodes in the tree is in the range [0, 2000].
 ### 기타
 - 이진트리 <a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84_%ED%8A%B8%EB%A6%AC">1</a>
 - 트리 순회 <a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84_%ED%8A%B8%EB%A6%AC">2</a>
-- 스레드 이진트리 <a href="https://ko.wikipedia.org/wiki/%EC%8A%A4%EB%A0%88%EB%93%9C_%EC%9D%B4%EC%A7%84_%ED%8A%B8%EB%A6%AC'>3</a>
+- 스레드 이진트리 <a href="https://ko.wikipedia.org/wiki/%EC%8A%A4%EB%A0%88%EB%93%9C_%EC%9D%B4%EC%A7%84_%ED%8A%B8%EB%A6%AC">3</a>
 
