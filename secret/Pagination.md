@@ -1,12 +1,19 @@
 ## Case18 : Pagination
 
 ### 케이스 주제
-Q. 페이지네이션 구현
+Q. 페이지네이션 구현하는 방법 알아봅시다.
 
 ### 기능 요구사항
-1. 주어진 댓글 데이터 22개에 대해 페이지를 나눠 댓글 요소를 뷰에 표현한다.
-2. 페이지 당 표현할 수 있는 댓글 요소 수를 설정할 수 있다.
-3. 현재 페이지를 알 수 있고, 다음 페이지로 넘어갈 수 있는 뷰에 기능을 구현한다.
+1. 주어진 댓글 데이터 22개에 대해 페이지를 나눠 댓글 요소를 뷰에 표현합니다.
+2. 페이지 당 표현할 수 있는 댓글 요소 수를 설정할 수 있습니다.
+3. 현재 페이지를 알 수 있고, 다음 페이지로 넘어갈 수 있는 뷰에 기능을 구현합니다.
+
+
+한 페이지에 보여질 게시물 수 :5  
+총 게시물 수 :22  
+1 page ) (1-1) * 5  
+2 page ) (2-1) * 5  
+3 page ) (3-1) * 5  
 
 
 ### 기능 작동 이미지
@@ -169,12 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 1. 각 페이지 버튼을 클릭했을 때, 페이지에 해당하는 게시물을 뿌려주고
 2. 하단 페이지리스트를 뿌려준다.
 3. event.target.matches 로 처리한것은 각 클릭시 하단도 새로 리프레시 되므로 문서가 로드하고나서 이벤트를 할당하지 않고 클릭하고나서 해당 셀렉터 인지 확인한 후에 작동하게 한다.
-​
-##### 생각해볼 점
-pagination 객체로 생성했는데,
-html 안에 데이터를 넣어주는 부분도
-pagination 함수안에 넣어줄지 말지 어느부분이 설계상 더 좋을지 고민해보기
-​
+
 > 아래부분
 ```js
 pagination.getCommentFormat(pagination.getComments(1));
@@ -721,3 +723,44 @@ export default PaginationButtons;
 - https://ko.reactjs.org/docs/hooks-reference.html#usememo
 - https://ko.reactjs.org/docs/hooks-reference.html#usecallback
 - https://ko.reactjs.org/docs/lists-and-keys.html#keys-must-only-be-unique-among-siblings
+
+
+##### 기타 - 예전 class 형태 react
+```js
+import React, {Component} from 'react';
+import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = theme => ({
+    button: {
+        padding: "0"
+    }
+});
+
+class PaginationButton extends Component {
+    render() {
+        return (
+            <>
+                <span className="page">
+                    {this.props.currentPage!==1?<Button variant="outlined" color="primary" onClick={() => this.props.onClick(this.props.currentPage-1)}>
+                        {"<"}
+                    </Button>:""}
+                    {[...Array(this.props.page)].map((n, index) => {
+                        return <Button className={this.props.currentPage === n+1 ? "page-item active" : "page-item"}
+                                       onClick={() => this.props.onClick(index+1)}
+                                       variant="outlined"
+                                       color="primary">
+                            {index+1}
+                        </Button>
+                    })}
+                    {this.props.page!==this.props.currentPage?<Button variant="outlined" color="primary" onClick={() => this.props.onClick(this.props.currentPage+1)}>
+                        {">"}
+                    </Button>:""}
+                </span>
+           </>
+        );
+    }
+}
+
+export default withStyles(styles)(PaginationButton);
+```
