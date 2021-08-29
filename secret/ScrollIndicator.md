@@ -88,10 +88,10 @@ window.addEventListener('scroll', function () {
 ```
 
 ### 기타( 검색 할 수 있는 목록들)
-1. infinity scroll
-2. scrollTop
-3. pagination
+1. infinity scroll (*case3을 참고 할 수 있음*)
+2. scrollTop(*case19을 참고 할 수 있음*)
+3. pagination(*case18을 참고 할 수 있음*)
 
-4. transfrom css
-5. calc
+4. transfrom css <a href="https://developer.mozilla.org/ko/docs/Web/CSS/transform">transform</a>
+5. calc< a href="https://developer.mozilla.org/ko/docs/Web/CSS/calc()">calc</a>
 
