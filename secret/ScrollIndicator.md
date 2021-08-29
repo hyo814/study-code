@@ -99,4 +99,5 @@ window.addEventListener('scroll', function () {
 
 4. transfrom css &nbsp;<a href="https://developer.mozilla.org/ko/docs/Web/CSS/transform">transform</a>
 5. calc &nbsp;<a href="https://developer.mozilla.org/ko/docs/Web/CSS/calc()">calc</a>
+6. 진행률 관련 progress bar (*case16을 참고 할 수 있음*) <a href='https://github.com/hyo814/study-code/blob/main/secret/ProgressBar.md'>hyo814문서 ProgressBar</a>
 
