@@ -45,8 +45,9 @@ var levelOrder = function(root) {
   // example 3 []을 기반으로 의미 합니다.
   if (!root) return [];
 
-  const answer = [];
-  const travel = [];
+  const answer = []; // 레벨 별로 순회할 예정
+  const travel = []; 
+  // push : push() 메서드는 배열의 끝에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환합니다.
   travel.push(root);
 
   while(travel.length) { // while 문
