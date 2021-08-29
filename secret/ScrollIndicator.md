@@ -97,6 +97,6 @@ window.addEventListener('scroll', function () {
 2. scrollTop(*case19을 참고 할 수 있음*)
 3. pagination(*case18을 참고 할 수 있음*)
 
-4. transfrom css &nbsp; &nbsp; <a href="https://developer.mozilla.org/ko/docs/Web/CSS/transform">transform</a>
-5. calc &nbsp;&nbsp;<a href="https://developer.mozilla.org/ko/docs/Web/CSS/calc()">calc</a>
+4. transfrom css &nbsp;<a href="https://developer.mozilla.org/ko/docs/Web/CSS/transform">transform</a>
+5. calc &nbsp;<a href="https://developer.mozilla.org/ko/docs/Web/CSS/calc()">calc</a>
 
