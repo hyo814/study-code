@@ -9,7 +9,7 @@ Q. 요구사항 : 스크롤 시 현재 남의 컨텐츠의 분량을 화면에 �
 - 스크롤이 끝까지 내려가면 Indicator도 끝까지 이동하고, 스크롤을 다시 상단으로 올리면 Indicator도 다시 뒤로 돌아가게 만드시오.
 
 ### 기능 작동 이미지
-![example_image](./example.gif)
+<a href='https://ifh.cc/v-LQM3Xo' target='_blank'><img src='https://ifh.cc/g/LQM3Xo.gif' border='0'></a>
 
 
 ### 문제
