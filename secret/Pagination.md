@@ -8,29 +8,20 @@ Q. 페이지네이션 구현하는 방법 알아봅시다.
 2. 페이지 당 표현할 수 있는 댓글 요소 수를 설정할 수 있습니다.
 3. 현재 페이지를 알 수 있고, 다음 페이지로 넘어갈 수 있는 뷰에 기능을 구현합니다.
 
+``` md
+// 기본 연산 계산 방식
 
-한 페이지에 보여질 게시물 수 :5  
+- 한 페이지에 보여질 게시물 수 :5  
 총 게시물 수 :22  
-1 page ) (1-1) * 5  
-2 page ) (2-1) * 5  
-3 page ) (3-1) * 5  
+1 page ) (1-1) * 5  ==> start : 0 end: 5
+2 page ) (2-1) * 5  ==> start : 5 end: 10
+3 page ) (3-1) * 5  ==> start: 10 end: 15 
+
+```
 
 
 ### 기능 작동 이미지
 <a href='https://ifh.cc/v-b86L5h' target='_blank'><img src='https://ifh.cc/g/b86L5h.gif' border='0'></a>
-
-
-### 실행 방법 / 풀이 방법 안내
-> 문제 풀기 방식 :
->
-> 1. 레포지토리를 clone
-> 2. question 디렉토리에 `package.json`이 없는 경우, `index.html`을 열거나, live-server extension으로 열기. 이외 경우 아래 안내 참고.
-> 3. 터미널에서 각 문제 폴더 디렉토리로 이동하여 `npm install`로 의존성을 설치
-> 4. `package.json`을 참고하여, 명시된 scripts 명령어로 개발서버 실행.
-> 5. 코드 수정하면서 문제 해결하세요
-
-기본 번들러로 `parcel`을 사용했습니다. - `react` 문제의 경우, `react-scripts` 사용. 문제 디렉토리에서 `npm start` 또는 `npx parcel index.html watch`로 개발서버를 실행하세요.
-
 
 ### 문제
 q1. JavaScript로 해당 기능을 구현하세요. (* index.js 파일 확인)
@@ -48,11 +39,12 @@ this.limit = 5;
 this.total_page = Math.ceil( comments.length / this.limit );
 }
 ```
-총 페이지 수는 commets 배열의 길이를 한페이지에 보여질 게시물수로 나눈다.
-ex) 한페이지에 5개씩 보이고 총 게시물 수가 23 개라면
-23/5 를 올림 계산해서 5페이지가 나온다.
-올림을 하는 이유는 마지막 페이지에 게시물 수가 3개라도 1페이지로 치기 때문이다.
-​
+### 상세풀이 
+총 페이지 수는 commets 배열의 길이를 한페이지에 보여질 게시물수로 나눕니다.
+ex) 한페이지에 5개씩 보이고 총 게시물 수가 23 개라면 23/5 를 올림 계산해서 5페이지가 나옵니다.  
+올림을 하는 이유는 마지막 페이지에 게시물 수가 3개라도 1페이지로 치기 때문입니다.  
+
+
 ```js
 Pagination.prototype.getComments = function(page){
 ​
@@ -68,16 +60,19 @@ return  comments.filter( function( _ , index ){
 }
 ​
 ```
+
+### 상세풀이 
 Parameter 각 페이지를 인자로 주었을때
 Return 해당하는 게시물 수
 ​
-시작지점부터 한페이지에 보여질 게시물 수를 보여준다
-- 1 page ) 0번부터 5(한페지에 보여줄숫자)까지의 게시물을 보여주면된다. start : 23*(1페이지-1) * limit
+시작지점부터 한페이지에 보여질 게시물 수를 보여줍니다.
+- 1 page ) 0번부터 5(한페지에 보여줄숫자)까지의 게시물을 보여주면 됩니다. start : 23*(1페이지-1) * limit
 - 2 page ) (2-1) * 5
 - 3 page ) (3-1) * 5
-각 시작지점은 위와 같고 5개의 게시물씩 보여주면 된다.
+각 시작지점은 위와 같고 5개의 게시물씩 보여주면 됩니다.
 ​
-> 아래와 같이 처리 하는 것은 배열의 인덱스가 시작지점부터 한페이지에 보여질 게시물 수의 인덱스로 처리하기 위함이다.
+> 아래와 같이 처리 하는 것은 배열의 인덱스가 시작지점부터 한페이지에 보여질 게시물 수의 인덱스로 처리하기 위함입니다.
+
 
 ```js
 return  comments.filter( function( _ , index ){
@@ -85,7 +80,7 @@ return  comments.filter( function( _ , index ){
 ​   else  return  false;
 });
 ```
-> 게시물 배열을 넘겼을 때 html 태그에 맞춰서 출력해주는 함수를 구현한다.
+> 게시물 배열을 넘겼을 때 html 태그에 맞춰서 출력해주는 함수를 구현합니다.
 ​
 ```js
 Pagination.prototype.getCommentFormat = function (comments) {
@@ -116,12 +111,12 @@ Pagination.prototype.getCommentFormat = function (comments) {
 };
 ```
 
-아래와 같이 처리 하는것은 html 양식에 맞춰 순회하면서 acc 에 누적해서 리턴해주기 위함이다.
+아래와 같이 처리 하는것은 html 양식에 맞춰 순회하면서 acc 에 누적해서 리턴해주기 위함입니다.
 ```js
 return  comments.reduce( function(acc, comment ){
 ```
 ​
-> 총 페이지의 숫자를 입력시 페이지를 화면에 뿌려주는 함수를 구현한다.
+> 총 페이지의 숫자를 입력시 페이지를 화면에 뿌려주는 함수를 구현합니다.
 ​
 ```js
 Pagination.prototype.getPageListFormat = function () {
@@ -150,9 +145,9 @@ document.addEventListener("DOMContentLoaded", function () {
   pageContainer.innerHTML = pagination.getPageListFormat();
 
 ```
-1. 문서가 로드 된 뒤 1페이지에 해당하는 게시물을 보여준다
-2. 페이지 리스트들을 보여주고, 1페이지를 활성화한다.
-​
+1. 문서가 로드 된 뒤 1페이지에 해당하는 게시물을 보여줍니다.
+2. 페이지 리스트들을 보여주고, 1페이지를 활성화합니다.
+3. 클릭한 시점의 버튼 인지를 확인을 하면서 처리를 할 수 있도록 합니다.
 ​
 ```js
   document.addEventListener(
@@ -173,9 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 ​
 ```
+
+### 상세풀이 
 1. 각 페이지 버튼을 클릭했을 때, 페이지에 해당하는 게시물을 뿌려주고
-2. 하단 페이지리스트를 뿌려준다.
-3. event.target.matches 로 처리한것은 각 클릭시 하단도 새로 리프레시 되므로 문서가 로드하고나서 이벤트를 할당하지 않고 클릭하고나서 해당 셀렉터 인지 확인한 후에 작동하게 한다.
+2. 하단 페이지리스트를 뿌려줍니다.
+3. event.target.matches 로 처리한것은 각 클릭시 하단도 새로 리프레시 되므로 문서가 로드하고나서 이벤트를 할당하지 않고 클릭하고나서 해당 셀렉터 인지 확인한 후에 작동하게 합니다.
 
 > 아래부분
 ```js
@@ -200,8 +197,10 @@ q2. jQuery 해당 기능을 구현하세요. (* index.js 파일 확인)
 ```
 
 q3. React로 해당 기능을 구현하세요. (* comment.js 파일 확인)
+<a href='https://redux-toolkit.js.org/'>redux tool_kit </a>
 - 각 클릭 시 react로 상태를 어떻게 처리하는지
 - redux toolkit을 사용
+- (기타) usestate도 응용 할 수 있도록 공부 하기
 
 ```js
 export  const { getComments } = slice.actions;
@@ -211,7 +210,7 @@ export  const  commentsReducer = slice.reducer;
 ```js
 getComments( state, action ) {
 ​
-const  start = ( action.payload.page - 1 ) * state.limit;
+const  start = ( action.payload.page - 1 ) * state.limit; // payload로 제어합니다.
 const  limit = start + state.limit;
 ​
 state.data = state.comments.filter(
