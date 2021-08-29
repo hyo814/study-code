@@ -22,7 +22,76 @@ Q. 요구사항 : 스크롤 시 현재 남의 컨텐츠의 분량을 화면에 �
 q1. 크로스 브라우징을 고려하여 현재 문서의 높이를 가져오기
 q2. width 또는 translateX를 사용하여 남은 컨텐츠를 표기하는 방법 학습하기
 
+
+### 실전 풀이
+q1. 첫 번째 방법 (1) : width 크기를 변경
+- document.documentElement.scrollHeight, document.body.scrollHeight : 전체 문서의 높이
+- document.documentElement.clientHeight, document.body.clientHeight : 현재 눈에 보이는 브라우저의 높이
+
+#### 부록
+- document.documentElement  
+IE9미만을 고려해서 작업할 경우에 사용됩니다.  
+참고로 위 두 속성을 IE9 미만에서는 지원하지 않습니다.  
+하지만 크롬에서는 동작하지 않습니다.  
+  
+- document.body  
+html 코드에 DTD가 선언 되어 있다면 동작하지 않는다고 합니다.
+
+```js
+const scrollBar = document.getElementById('scroll-bar');
+
+window.addEventListener('scroll', function () {
+  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+  const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+  const clientHeight = document.body.clientHeight || document.documentElement.clientHeight;
+
+  // contentHeight : 눈에 보이지 않는 남은 범위
+  const contentHeight = scrollHeight - clientHeight;
+  const percent = (scrollTop / contentHeight) * 100;
+  
+  scrollBar.style.width = percent + '%';
+})
+```
+
+q2. 두 번째 방법 (2) : translateX 활용
+- scrollBar의 width 값을 100%로 변경한 다음 최초 위치를 화면 왼쪽 영역 바깥으로 이동
+- 스크롤 시 translateX를 사용하여 scrollBar 위치를 변경
+
+
+```js
+const scrollBar = document.getElementById('scroll-bar');
+
+window.addEventListener('scroll', function () {
+  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+  const scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
+  const clientHeight = document.body.clientHeight || document.documentElement.clientHeight;
+
+  const contentHeight = scrollHeight - clientHeight;
+  const percent = (scrollTop / contentHeight) * 100;
+
+  scrollBar.style.transition = 'transform 0.3s ease-out';
+  scrollBar.style.transform = `translateX(-${100 - percent}%)`;
+})
+```
+
+```css
+#scroll-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: blue;
+
+  width: 100%;
+  transform: translateX(-100%);
+}
+```
+
 ### 기타( 검색 할 수 있는 목록들)
 1. infinity scroll
 2. scrollTop
 3. pagination
+
+4. transfrom css
+5. calc
+
