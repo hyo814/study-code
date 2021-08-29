@@ -2,10 +2,10 @@
 <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/description/">참고해야할 사이트</a>   
 
 ## (영어)
-Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).  
+The number of nodes in the tree is in the range [0, 2000].  
+-1000 <= Node.val <= 1000   
 
-The number of nodes in the tree is in the range [0, 2000].
--1000 <= Node.val <= 1000 
 
 ## (해석)
 이진 트리가 주어지면 노드 값의 레벨 순서 순회를 반환 합니다.  
