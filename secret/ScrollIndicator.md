@@ -94,7 +94,7 @@ window.addEventListener('scroll', function () {
 
 ### 기타( 검색 할 수 있는 목록들)
 1. infinity scroll (*case3을 참고 할 수 있음*)
-2. scrollTop(*case19을 참고 할 수 있음*)
+2. scrollTop(*case19을 참고 할 수 있음*)<a href="https://github.com/hyo814/study-code/blob/main/secret/Scrolltop.md">hyo814문서 ScrollTop</a>
 3. pagination(*case18을 참고 할 수 있음*)
 
 4. transfrom css &nbsp;<a href="https://developer.mozilla.org/ko/docs/Web/CSS/transform">transform</a>
