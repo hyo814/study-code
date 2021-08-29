@@ -407,3 +407,24 @@ $(window).on('mousewheel DOMMouseScroll', function(e) {
  - <a href="https://ant.design/components/back-top/">스크롤탑 1</a>
  - <a href="https://www.npmjs.com/package/debounce">2</a>
  - <a href="https://www.npmjs.com/package/lodash.throttle">3</a>
+
+### 기타2
+예전 class react 코드
+```js
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+
+class ScrollToTop extends Component {
+    componentDidUpdate(prevProps) {
+        if(this.props.location !== prevProps.location){
+            window.scrollTo(0, 0)
+        }
+    }
+
+    render(){
+        return this.props.children;
+    }
+}
+
+export default withRouter(ScrollToTop);
+```
