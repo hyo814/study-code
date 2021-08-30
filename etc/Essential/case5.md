@@ -1,7 +1,7 @@
 case5
 식(연산 또는 계산)
 
-<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators'>표현식과 연산자 </a>
+<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators">표현식과 연산자 </a>
          
 ```js
 const colors = ['red','yellow','black']
