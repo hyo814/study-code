@@ -36,3 +36,6 @@ var trimBST = function(root, low, high) {
 };
 ```
 
+### 참고 자료
+https://yoongrammer.tistory.com/71
+
