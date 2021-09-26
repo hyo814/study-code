@@ -110,7 +110,7 @@ $arrowDown.addEventListener("click", () => {
 });
 
 
-// li 하나씩 이벤트가 생성 될 수 있도록 진행할 에정
+// li 하나씩 이벤트가 생성 될 수 있도록 진행할 예정
 $itemList.addEventListener("click", (event) => {
 // li가 아니면 무시를 하도록 합니다. nodeName은 태그 이름을 가지고 옵니다.
   if (event.target.nodeName !== "LI") {
