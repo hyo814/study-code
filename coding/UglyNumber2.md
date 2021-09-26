@@ -69,13 +69,13 @@ var nthUglyNumber = function(n) {
 
 // 예제 2번에 의하여 1의 경우에는  1에는 소인수가 없으므로 모든 소인수는 2, 3, 5로 제한된다고 하니 포함할 것
   const uglyNumber = [1];
-// uglyNumbers에 uglyNumbers 를 이루는 소인수, 즉 2, 3, 5를 곱해서 그 결과가 추가되었다면 다음 uglyNumbers에도 소인수인 2 , 3, 5를 곱해야 합니다.
+// uglyNumbers에 uglyNumbers 를 이루는 소인수, 즉 2, 3, 5를 곱해서 그 결과가 추가되었다면 다음 uglyNumbers에도 소인수인 2 , 3, 5를 곱할 것
   let ugly2 = 0;
   let ugly3 = 0;
   let ugly5 = 0;
 
   for (let i = 1; i < n; i++) {
-  // 이미 다음 숫자로 넘어가서 소인수를 곱한 수와, 기존에 아직 곱하지 못한 소인수가 남아있는 경우를 대조해서, 더 작은 것을 먼저 배열에 추가해주어야 한다.
+  // 이미 다음 숫자로 넘어가서 소인수를 곱한 수와, 기존에 아직 곱하지 못한 소인수가 남아있는 경우를 대조해서, 더 작은 것을 먼저 배열에 추가
   // 에제 : 3 * 5 = 5 * 3 = 15를 의미 할때 작은 것이 먼저 시작 되어 중복이 없도록 유도
     uglyNumber[i] = Math.min(uglyNumber[ugly2] * 2, uglyNumber[ugly3] * 3, uglyNumber[ugly5] * 5);
     if(uglyNumber[i] === uglyNumber[ugly2]*2) ugly2++; 
