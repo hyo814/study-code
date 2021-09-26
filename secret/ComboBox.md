@@ -32,50 +32,123 @@ q1. Javascript - 각각의 이벤트 리스트에 코드를 작성하여 위 기
 - setTimeout을 사용하여 일정시간 후 알림메세지를 자동으로 사라지게 하여 UX개선
 
 ### 코드와 문제 풀이
+
+
+1. show와 hide  css 관리
+```css
+.Notification--show {
+    animation: showSlide 1s ease forwards;
+}
+
+.Notification--hide {
+    animation: hideSlide 1s ease forwards;
+}
+
+@keyframes showSlide {
+    0% {
+        transform: translateX(-30px);
+    }
+
+    15% {
+        transform: translateX(-250px);
+    }
+
+    100% {
+        transform: translateX(-222px);
+    }
+}
+
+@keyframes hideSlide {
+    0% {
+        transform: translateX(-222px);
+    }
+
+    15% {
+        transform: translateX(-250px);
+    }
+
+    100% {
+        transform: translateX(212px);
+    }
+}
+```
+
+
+2. js 코드
 ```js
+
+// visibillity 의 상태에 따라
 const toggleItemList = () => {
   const isVisible = $itemList.style.visibility === "visible";
   $itemList.style.visibility = isVisible ? "hidden" : "visible";
 };
 
+
+// 참고사항: event.key의 종류는 3가지 있으며 특히 keypress 의 경우 아스키코드에 없는 한글은 미지원 됩니다.
+// keydown: 키보드를 누를 때 실행. 키를 누르고 있을 때 단 한번만 실행
+// keypress: 키보드를 누를 때 실행. 키를 누르고 있을 때 계속 실행
+// keyup: 누른 키에서 손을 뗄 때 실행
 $inputTag.addEventListener("keyup", (event) => {
   const { value } = event.target;
   if (!value) {
     return;
   }
-
+  // key 값이 엔터일 때
   if (event.key === "Enter") {
     items.push(value);
+    // const ITEM_ADDED_EVENTNAME = 'itemAdded' 의 이름만 전달을 합니다.
     document.dispatchEvent(new CustomEvent(ITEM_ADDED_EVENTNAME));
+    // 여러개의 li
     $itemList.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
   }
 });
 
+
+// 값이 있기 전 상태에서 클릭을 하면 toggleItemList가 보일 것
 $arrowDown.addEventListener("click", () => {
   toggleItemList();
 });
 
+
+// li 하나씩 이벤트가 생성 될 수 있도록 진행할 에정
 $itemList.addEventListener("click", (event) => {
+// li가 아니면 무시를 하도록 합니다. nodeName은 태그 이름을 가지고 옵니다.
   if (event.target.nodeName !== "LI") {
     return;
   }
 
+
+// 값이 선택 된 것을 보이도록
   $inputTag.value = event.target.innerText;
-  // 실무에선 변수로 활용
+// 직접 값을 매길 수 있도록
   $currentItem.textContent = `현재 아이템: ${event.target.innerText}`;
   toggleItemList();
 });
 
+
+// 만약? 변수로 진행을 하게 된다면 이렇게 하면 됩니다.
+// const currentValue = event.target.innerText
+// $inputTag.value = currentValue
+// $currentItem.textContent =`현재 아이템: ${currentValue}`
+// toggleItemList()
+
+
+// notification 이  수신 할 수 있도록
 document.addEventListener(ITEM_ADDED_EVENTNAME, () => {
+// 추가 해주었다가
   $notification.classList.add("Notification--show");
+// 지워졌다가
   $notification.classList.remove("Notification--hide");
 
+
+// UX의 개선된 작업을 위해 3초 기다리기
   window.setTimeout(() => {
     $notification.classList.add("Notification--hide");
     $notification.classList.remove("Notification--show");
   }, 3000);
 });
 ```
+
 
 
 #### 정리된 해설
@@ -102,6 +175,7 @@ document.addEventListener(ITEM_ADDED_EVENTNAME, () => {
 
 ##### 기타(관련된 링크들)
 - https://mui.com/components/autocomplete/
+- https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
 - https://react-bootstrap.github.io/components/dropdowns/
 - https://codepen.io/naradesign/pen/WNpwdXw?editors=1100
 - https://codepen.io/naradesign/pen/ZEeWyZO
