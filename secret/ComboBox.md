@@ -98,6 +98,8 @@ document.addEventListener(ITEM_ADDED_EVENTNAME, () => {
   * 실무에선 이 콤보 박스를 활용할때 선택된 값을 상태관리 대상으로 삼아서 다른 로직에 활용합니다.
 
 
-##### 기타
+##### 기타(관련된 링크들)
 - https://mui.com/components/autocomplete/
 - https://react-bootstrap.github.io/components/dropdowns/
+- https://codepen.io/naradesign/pen/WNpwdXw?editors=1100
+- https://codepen.io/naradesign/pen/ZEeWyZO
