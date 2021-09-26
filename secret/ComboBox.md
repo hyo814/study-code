@@ -157,7 +157,6 @@ document.addEventListener(ITEM_ADDED_EVENTNAME, () => {
 2. input tag에 값을 입력하고 엔터키를 쳐서 드롭다운 리스트에 값을 추가해야 하므로 기본적으로 input tag에 event listener를 활용해야 합니다.
 - 이때 값이 없는 경우를 처리해야 하고
 - 엔터키가 눌렸을때 드롭다운 리스트에 추가할 수 있도록 값의 배열에 값을 추가 합니다.
-- (option) 추가로, 값이 추가되었을때 추가되었음을 알릴 수 있는 notification도 함께 있으면 UX에 도움이 됩니다.
 - 추가된 값을 드롭다운 리스트에 보여주어야 하는데 여기엔 몇가지 방법이 있습니다.
   * 값을 추가했을때 곧바로 드롭다운 리스트 dom에 렌더링을 해두고 input tag 우측의 화살표 버튼이 눌렸을때 CSS를 이용해 보여주는 방법
   * 값을 배열로 받아두었다가 화살표 버튼이 클릭되었을때 dom에 렌더링 하는 방법
@@ -170,7 +169,6 @@ document.addEventListener(ITEM_ADDED_EVENTNAME, () => {
 4. 값들이 몇개 추가되어 드롭다운 리스트를 열었을때, 항목 하나하나를 클릭할 수 있어야 하고 클릭하면 현재 선택된 값으로 input tag가 채워져야 합니다.
 - 이때 event listener는 모든 li tag에 각각 다는 것은 자원 낭비이므로 ul tag 하나에 붙여서 event delegation을 활용하는 것이 좋습니다.
 - 클릭 이벤트로 li tag의 text 값을 받았으면 드롭다운 리스트를 다시 toggle 해주고 현재 선택된 값을 input tag에 표시해줍니다.
-  * 실무에선 이 콤보 박스를 활용할때 선택된 값을 상태관리 대상으로 삼아서 다른 로직에 활용합니다.
 
 
 ##### 기타(관련된 링크들)
