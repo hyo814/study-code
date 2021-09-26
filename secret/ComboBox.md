@@ -103,3 +103,4 @@ document.addEventListener(ITEM_ADDED_EVENTNAME, () => {
 - https://react-bootstrap.github.io/components/dropdowns/
 - https://codepen.io/naradesign/pen/WNpwdXw?editors=1100
 - https://codepen.io/naradesign/pen/ZEeWyZO
+- https://react.vlpt.us/redux-middleware/08-json-server.html
