@@ -30,5 +30,43 @@ true주어진 모든 여행에 대해 모든 승객을 태우고 내릴 수 있�
 
 ## (풀이) 주석(ㅇ)
 ```js
-
+/**
+ * @param {number[][]} trips
+ * @param {number} capacity
+ * @return {boolean}
+ */
+function carPooling(trips, capacity) {
+    // 캘린더 역할을 할 배열을 만들고, 저장합니다.
+    // 일정에 대한 시간차를 통해 확인 할 수 있습니다.
+    // Uint16Array형식화 된 배열은 플랫폼 바이트 순서로 부호없는 16 비트 정수 배열을 나타냅니다.
+    // 바이트 순서에 대한 제어가 필요한 경우 DataView대신 사용하십시오. 
+    // 내용은 로 초기화됩니다 0. 
+    // 일단 설정되면 개체의 메서드를 사용하거나 표준 배열 인덱스 구문(즉, 대괄호 표기법 사용)을 사용     하여 배열의 요소를 참조할 수 있습니다.
+    
+    let schedule = new Uint16Array(1000).fill(0)
+    
+    // for 문 - 일정 관리
+    for (const trip of trips) {
+        
+        const people = trip[0]  // 카풀에 동참할 사람 수
+        const start = trip[1]   // 시작
+        const end = trip[2]     // 종료
+        
+        // 시간 간격에 따라 증가하여 인원 수 추가
+        // 일정 관리에 지정된 각각의 시간에 대해
+        for (let i = start; i < end; i++) {
+            
+            // 사용자 수 추가
+            schedule[i] += people
+            
+            // 사용자 수 추가가 안 될 때
+            if (schedule[i] > capacity) {
+                return false
+            }
+        }
+    }
+    
+    // 해결 되면 참으로 처리
+    return true
+}
 ```    
