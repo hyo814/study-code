@@ -36,78 +36,76 @@ q2. RxJS를 이용해 스트림 구조로 동일한 기능을 작성하시오
   마지막으로 타이핑을 한 순간에 API를 호출 할 수 있는 기능 구현 
 - slice, map 함수를 사용하여 특정조건에 맞는 검색어를 특정갯수만큼 노출 시키는 기능 구현 
 
+#### 기타 :: 고양이 api ( https://thecatapi.com/ )
+
 
 ### 문제 풀이
 ### q1. Vanilla JavaScript
-
 #### A)
 ```js
+// 고양이 서치 api
+const API_URL = 'https://api.thecatapi.com/v1/breeds/search';
+
+// 500 이니까 0.5초를 말함
+// 여러번 하지 않도록 debounce time 화 한다.
 const debounce = (targetFunction, debounceTime = 500) => {
-    let timerId = null;
+  let timerId = null;
 
-    return (...args) => {
-        if (timerId) {
-            clearTimeout(timerId);
-        }
-
-        timerId = setTimeout(() => {
-            targetFunction(...args);
-        }, debounceTime);
-    };
-};
-```
-
-```js
-$searchInput.addEventListener(
-    "keyup",
-    debounce(async (event) => {
-        const query = event.target.value;
-
-        if (!query) {
-            return;
-        }
-
-        document.dispatchEvent(
-            new CustomEvent(LOADING_EVENT_NAME, {
-                detail: {
-                    isLoading: true
-                }
-            })
-        );
-        // 고양이 검색 API를 검색어 API로 간주합니다
-        const response = await fetch(`${API_URL}?q=${query}`);
-        const cats = await response.json();
-        document.dispatchEvent(
-            new CustomEvent(LOADING_EVENT_NAME, {
-                detail: {
-                    isLoading: false
-                }
-            })
-        );
-
-        if (!cats.length) {
-            $textList.innerHTML = "";
-            $textList.style.visibility = "hidden";
-            $infoParagraph.innerHTML = "해당하는 검색어가 없습니다..!";
-            return;
-        }
-
-        $textList.innerHTML = cats
-            .slice(0, 5)
-            .map((cat) => `<li>${cat.name}</li>`)
-            .join("");
-        $textList.style.visibility = "visible";
-        $infoParagraph.innerHTML = "";
-    })
-);
-
-document.addEventListener(LOADING_EVENT_NAME, ({
-    detail: {
-        isLoading
+  return (...args) => {
+    if (timerId) {
+      // 함수를 종료
+      clearTimeout(timerId);
     }
-}) => {
-    $loadingIndicator.style.visibility = isLoading ? "visible" : "hidden";
-});
+    // 시간을 통해 함수 실행
+    timerId = setTimeout(() => {
+      targetFunction(...args);
+    }, debounceTime);
+  };
+};
+
+// $를 통해서 dom을 위한 변수를 라는 것을 유추 할 수 있음
+const $searchInput = document.querySelector('.SearchInput');
+const $loadingIndicator = document.querySelector('.LoadingIndicator');
+const $textList = document.querySelector('.TextList');
+const $infoParagraph = document.querySelector('.InfoParagraph');
+
+// 한번만 api 가 갈 수 있도록 debounce 기능 사용
+$searchInput.addEventListener('keyup', debounce(async (event) => {
+    const query = event.target.value;
+
+    if (!query) {
+      return;
+    }
+    
+    // 로딩을 하기 위해 visible로 해결함
+    $loadingIndicator.style.visibility = 'visible';
+    // 고양이 검색 API를 검색어 API로 간주합니다.
+    // await를 사용하여 비동기화 만듭니다.
+    // q = query 파라미터
+    const response = await fetch(`${API_URL}?q=${query}`);
+    // response 기반
+    const cats = await response.json();
+    console.log(cats,"고양이 목록")
+    // 로딩이 완료가 되면 hidden 처리
+    $loadingIndicator.style.visibility = 'hidden';
+
+    if (!cats.length) {
+    // 아니라면 표시
+      $textList.innerHTML = '';
+      $textList.style.visibility = 'hidden';
+      $infoParagraph.innerHTML = '해당하는 검색어가 없습니다..!';
+      return;
+    }
+    // 배열을 위한 렌더링
+    $textList.innerHTML = cats
+    // 슬라이스 5개씩 나누자.
+      .slice(0, 5)
+      .map((cat) => `<li>${cat.name}</li>`)
+      .join('');
+    $textList.style.visibility = 'visible';
+    $infoParagraph.innerHTML = '';
+  })
+);
 ```
 
 ##### 해설
@@ -127,7 +125,9 @@ document.addEventListener(LOADING_EVENT_NAME, ({
 - 따라서 then, catch, finally 함수를 체이닝해서 구현하는 방법과
 - 이 API 요청 함수를 감싸는 함수를 async 함수로 만드는 방법이 있고 현재 코드는 이 방법으로 작성 돼있습니다.
 
+
 6. 이때 사용자가 타이핑을 한 문자씩 할때마다 우리가 등록한 이벤트 핸들러가 실행됩니다. 즉, 현재 상태에서는 사용자의 타이핑 숫자만큼 API Request가 실행됩니다. 우리가 검색 자동완성에서 기대하는 것은 사용자가 유의미한 글자를 모두 입력한 뒤에 API Request를 실행하는 것입니다. 따라서 이벤트 핸들러에 debounce를 걸어서 가장 마지막 타이핑이 일어나고 n초 뒤(코드에서는 0.5초)에 API Request를 실행해서 네트워크 자원을 아끼고 지나치게 자주 로딩 인디케이터와 검색어 목록이 깜빡거리는 점을 차단합니다.
+
 
 7. API Response를 받아서 검색어 결과를 목록을 표현하는 ul tag에 렌더링 합니다.
 - 응답 결과가 있으면 그대로 렌더링하고
@@ -139,11 +139,27 @@ document.addEventListener(LOADING_EVENT_NAME, ({
 
 
 
-
+### 따로 강의엔 없었는데 해설책엔 있었음
 ### q2. RxJS
 
 #### A)
 ```js
+import { fromEvent } from "rxjs";
+import {
+  map,
+  debounceTime,
+  distinctUntilChanged,
+  tap,
+  switchMap
+} from "rxjs/operators";
+import { ajax } from "rxjs/ajax";
+
+const API_URL = "https://api.thecatapi.com/v1/breeds/search";
+const $searchInput = document.querySelector(".SearchInput");
+const $loadingIndicator = document.querySelector(".LoadingIndicator");
+const $textList = document.querySelector(".TextList");
+const $infoParagraph = document.querySelector(".InfoParagraph");
+
 const inputStream = fromEvent($searchInput, "input").pipe(
   map((event) => event.target.value),
   debounceTime(500),
@@ -156,9 +172,7 @@ const inputStream = fromEvent($searchInput, "input").pipe(
   ),
   tap(() => ($loadingIndicator.style.visibility = "hidden"))
 );
-```
 
-```js
 inputStream.subscribe({
   next: (cats) => {
     if (!cats.length) {
@@ -181,6 +195,7 @@ inputStream.subscribe({
   }
 });
 ```
+
 
 ##### 해설
 1. Reactive 패러다임은 크게 4가지 개념을 이해하면 됩니다.
