@@ -12,7 +12,7 @@ Given a target representing the value of the wheels that will unlock the lock, r
 
  
 
-Example 1:
+Example 1:  
 
 Input: deadends = ["0201","0101","0102","1212","2002"], target = "0202"
 Output: 6
@@ -20,19 +20,22 @@ Explanation:
 A sequence of valid moves would be "0000" -> "1000" -> "1100" -> "1200" -> "1201" -> "1202" -> "0202".
 Note that a sequence like "0000" -> "0001" -> "0002" -> "0102" -> "0202" would be invalid,
 because the wheels of the lock become stuck after the display becomes the dead end "0102".
-Example 2:
+
+Example 2:  
 
 Input: deadends = ["8888"], target = "0009"
 Output: 1
 Explanation:
 We can turn the last wheel in reverse to move from "0000" -> "0009".
-Example 3:
+
+Example 3:  
 
 Input: deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"], target = "8888"
 Output: -1
 Explanation:
 We can't reach the target without getting stuck.
-Example 4:
+
+Example 4:  
 
 Input: deadends = ["0000"], target = "8888"
 Output: -1
@@ -57,7 +60,7 @@ target잠금을 해제할 바퀴의 값을 나타내는 것이 주어지면 잠�
 
  
 
-예 1:
+예 1:  
 
 입력: deadends = ["0201","0101","0102","1212","2002"], target = "0202"
  출력: 6
@@ -65,19 +68,22 @@ target잠금을 해제할 바퀴의 값을 나타내는 것이 주어지면 잠�
 유효한 이동 순서는 "0000" -> "1000" -> "1100" -> "1200" -> "1201" -> "1202" -> "0202"입니다.
 "0000" -> "0001" -> "0002" -> "0102" -> "0202"와 같은 시퀀스는 유효하지 않습니다.
 디스플레이가 막다른 골목 "0102"가 된 후 자물쇠의 바퀴가 끼이기 때문입니다.
-예 2:
+
+예 2:  
 
 입력: deadends = ["8888"], target = "0009"
  출력: 1
  설명:
 마지막 바퀴를 반대로 돌려 "0000" -> "0009"에서 이동할 수 있습니다.
-예 3:
+
+예 3:  
 
 입력: deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"], 대상 = "8888"
  출력: -1
 설명:
 막히지 않고는 목표에 도달할 수 없습니다.
-예 4:
+
+예 4:    
 
 입력: deadends = ["0000"], 대상 = "8888"
  출력: -1
