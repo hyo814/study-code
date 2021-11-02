@@ -24,7 +24,7 @@
 ### 정렬 3번
 ### 재귀 <a href='https://github.com/hyo814/study-code/blob/main/coding/FindTheWinnerOfTheCircleGame.md'>FindTheWinnerOfTheCircleGame</a>
 
-### 참고해야하는 알고리즘 순서
+## 참고해야하는 알고리즘 순서
 #### 배열
 #### 큐
 #### 스택
