@@ -23,7 +23,7 @@
 ### case21_Modal Window 2 <a href='https://github.com/hyo814/study-code/blob/main/secret/Modal2.md'>정리</a>
 ### case22_Scroll Indicator <a href='https://github.com/hyo814/study-code/blob/main/secret/ScrollIndicator.md'>정리</a>
 ### case23_Loading <a href="https://github.com/hyo814/study-code/blob/main/secret/Loading.md">정리</a>
-### case24_Search Bar
+### case24_Search Bar <a href="https://github.com/hyo814/study-code/blob/main/secret/SearchBar.js">정리</a>
 ### case25_Combo Box <a href="https://github.com/hyo814/study-code/blob/main/secret/ComboBox.md">정리</a>
 ### case26_Radio Box
 ### case27_Check Box
