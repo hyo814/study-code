@@ -19,7 +19,7 @@
 ### case17_Carousel 2 <a href="https://github.com/hyo814/study-code/blob/main/secret/Carousel2.md">정리</a>
 ### case18_Pagination <a href='https://github.com/hyo814/study-code/blob/main/secret/Pagination.md'>정리</a>
 ### case19_Scroll Top <a href='https://github.com/hyo814/study-code/blob/main/secret/Scrolltop.md'>정리</a>
-### case20_List
+### case20_List <a href="https://github.com/hyo814/study-code/blob/main/secret/List.md">정리</a>
 ### case21_Modal Window 2 <a href='https://github.com/hyo814/study-code/blob/main/secret/Modal2.md'>정리</a>
 ### case22_Scroll Indicator <a href='https://github.com/hyo814/study-code/blob/main/secret/ScrollIndicator.md'>정리</a>
 ### case23_Loading
