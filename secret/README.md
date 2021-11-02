@@ -28,5 +28,5 @@
 ### case26_Radio Box <a href="https://github.com/hyo814/study-code/blob/main/secret/RadioBox.md">정리</a>
 ### case27_Check Box <a href="https://github.com/hyo814/study-code/blob/main/secret/CheckBox.md">정리</a>
 ### case28_Instant Search 2
-### case29_Auto Complete 2<a href="https://github.com/hyo814/study-code/blob/main/secret/AutoComplete2.md">정리</a>
+### case29_Auto Complete 2 <a href="https://github.com/hyo814/study-code/blob/main/secret/AutoComplete2.md">정리</a>
 ### case30_Rating UI
