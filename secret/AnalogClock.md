@@ -16,9 +16,6 @@ Q. 아래와 같이 동작하는 아날로그 시계를 구현해보십시오.
 4. 스타일은 CSS, Sass, CSS Module, styled-components 중 어느 것을 사용해도 좋으나 가급적 styled-components 사용을 권장한다.
 
 
-### 기능 작동 이미지
-<img src="assets/analog-clock.gif" alt="analog clock" style="width:300px;"/>
-
 
 ### 문제
 1. JS : Javascript로 해당 기능을 구현하시오.
