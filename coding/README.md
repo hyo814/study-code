@@ -21,7 +21,7 @@
 ### 힙 1번 <a href="https://github.com/hyo814/study-code/blob/main/coding/UglyNumber2.md">UglyNumber2</a>
 ### 힙 2번 <a href="https://github.com/hyo814/study-code/blob/main/coding/DistantBarcodes.md">DistantBarcodes</a>
 ### 정렬 1번<a href='https://github.com/hyo814/study-code/blob/main/coding/BoatsToSavePeople.md'>BoatsToSavePeople</a>
-### 정렬 2번
+### 정렬 2번 <a href='https://github.com/hyo814/study-code/blob/main/coding/RussianDollEnvelopes.md'>RussianDollEnvelopes</a>
 ### 정렬 3번 <a href='https://github.com/hyo814/study-code/blob/main/coding/CarPooling.md'>CarPooling</a>
 ### 재귀 <a href='https://github.com/hyo814/study-code/blob/main/coding/FindTheWinnerOfTheCircleGame.md'>FindTheWinnerOfTheCircleGame</a>
 
