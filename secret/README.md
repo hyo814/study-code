@@ -6,10 +6,10 @@
 ### case4_Dark Mode <a href='https://github.com/hyo814/study-code/blob/main/secret/Darkmode.md'>정리</a>
 ### case5_Stop Watch <a href='https://www.notion.so/case-5-02a54e58c9894ca6ac576282853cde1d'>참고</a> &nbsp; <a href="https://github.com/hyo814/study-code/blob/main/secret/StopWatch.md">정리</a>
 ### case6_Tabs <a href='https://www.notion.so/Case6-Tabs-5662b3ab5ce54aacb96a0172097ef2c0'>참고</a> &nbsp; <a href="https://github.com/hyo814/study-code/blob/main/secret/Tab.md">정리</a>
-### case7_Analog Clock <a href="https://github.com/mannue/study/blob/css/fastCampus/secretCode/case7_analog_clock/memo.md">참고</a> &nbsp;  <a href='https://github.com/hyo814/study-code/blob/main/secret/Analog_Clock.md'>정리</a>
+### case7_Analog Clock <a href="https://github.com/mannue/study/blob/css/fastCampus/secretCode/case7_analog_clock/memo.md">참고</a> &nbsp;  <a href='https://github.com/hyo814/study-code/blob/main/secret/AnalogClock.md'>정리</a>
 ### case8_Carousel <a href="https://github.com/hsw0905/study/tree/main/javascript/carousel">참고</a> &nbsp; <a href="https://github.com/hyo814/study-code/blob/main/secret/Carousel.md">정리</a>
 ### case9_Toggle Button <a href='https://github.com/hyo814/study-code/blob/main/secret/Togglebutton.md'>정리</a>
-### case10_Chips UI <a href="https://github.com/hyo814/study-code/blob/main/secret/Chips_UI.md">정리</a>
+### case10_Chips UI <a href="https://github.com/hyo814/study-code/blob/main/secret/ChipsUI.md">정리</a>
 ### case11_Dropdown Menu<a href="https://github.com/hyo814/study-code/blob/main/secret/DropDownMenu.md">정리</a>
 ### case12_Auto Complete 2 <a href='https://github.com/mannue/study/blob/css/fastCampus/secretCode/case12_auto_complete/memo.md'>참고</a> &nbsp; <a href='https://github.com/hyo814/study-code/blob/main/secret/AutoComplete2.md'>정리</a>
 ### case13_Instant Search <a href='https://github.com/hyo814/study-code/edit/main/secret/Instant_Search.md'>정리</a>
@@ -27,6 +27,6 @@
 ### case25_Combo Box <a href="https://github.com/hyo814/study-code/blob/main/secret/ComboBox.md">정리</a>
 ### case26_Radio Box <a href="https://github.com/hyo814/study-code/blob/main/secret/RadioBox.md">정리</a>
 ### case27_Check Box <a href="https://github.com/hyo814/study-code/blob/main/secret/CheckBox.md">정리</a>
-### case28_Instant Search 2
+### case28_Instant Search 2 <a href='https://github.com/hyo814/study-code/blob/main/secret/InstantSearch2.md"> 정리 </a>
 ### case29_Auto Complete 2 <a href="https://github.com/hyo814/study-code/blob/main/secret/AutoComplete2.md">정리</a>
 ### case30_Rating UI
