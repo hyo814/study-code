@@ -1,6 +1,6 @@
 # 참조사전
 ## 문법
-### 식별자 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case1.md">식별자</
+### 식별자 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case1.md">식별자</a>
 ### 값
 ### 타입
 ### 변수
