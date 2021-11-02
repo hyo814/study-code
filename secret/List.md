@@ -22,8 +22,6 @@ q3. javaScript - async/await와 콜백 함수를 사용하여 해당 기능을 �
 q4. jQuery로 해당 기능을 구현하세요.
 
 ### 문제 풀이
-## Case20 : List - 출제자 해설
-
 ### q1. Javascript - fetch
 
 #### A)
