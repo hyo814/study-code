@@ -28,5 +28,5 @@
 ### case26_Radio Box
 ### case27_Check Box
 ### case28_Instant Search 2
-### case29_Auto Complete 2
+### case29_Auto Complete 2<a href="https://github.com/hyo814/study-code/blob/main/secret/AutoComplete2.md">정리</a>
 ### case30_Rating UI
