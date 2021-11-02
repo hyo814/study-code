@@ -11,7 +11,8 @@
 ### 큐 2번 <a href='https://github.com/hyo814/study-code/blob/main/coding/PerfectSquares.md'>perfect squares</a>
 ### 스택 1번 <a href='https://github.com/hyo814/study-code/blob/main/coding/BaseBall.md'>baseball</a>
 ### 스택 2번 <a href='https://github.com/hyo814/study-code/blob/main/coding/Decode.md'>decode</a>
-### 링크드 리스트
+### 링크드 리스트 1번
+### 링크드 리스트 2번 <a href='https://github.com/hyo814/study-code/blob/main/coding/RemoveDuplicatesFromSortedList.md'>RemoveDuplicatesFromSortedList</a>
 ### 해쉬 테이블
 ### 트리
 ### 힙
