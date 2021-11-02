@@ -1,8 +1,9 @@
 # study-code
-## 코딩테스트 예제
 ## 유용한 사이트들
 <a href='https://blog.naver.com/ggamjige8888/221775348063'>블로그 참조</a>   
 
+
+## 코딩테스트 예제
 ### 배열 1번 
 ### 배열 2번 
 ### 배열 3번 <a href='https://github.com/hyo814/study-code/blob/main/coding/pascal-triangle.md'>pascal-triangle</a>
@@ -34,7 +35,7 @@
 #### 힙
 
 
-### 참고해야하는 자료구조 순서
+## 참고해야하는 자료구조 순서
 #### 정렬
 #### 버블 정렬
 #### 선택 정렬
