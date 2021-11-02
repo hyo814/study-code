@@ -7,7 +7,7 @@
 ### 배열 1번 <a href="https://github.com/hyo814/study-code/blob/main/coding/JumpGame2.md">JumpGame2</a>
 ### 배열 2번 <a href="https://github.com/hyo814/study-code/blob/main/coding/TrappingRainWater.md">TrappingRainWater</a>
 ### 배열 3번 <a href='https://github.com/hyo814/study-code/blob/main/coding/pascal-triangle.md'>pascal-triangle</a>
-### 큐 1번
+### 큐 1번<a href="https://github.com/hyo814/study-code/blob/main/coding/OpenTheLock.md">OpenTheLock</a>
 ### 큐 2번 <a href='https://github.com/hyo814/study-code/blob/main/coding/PerfectSquares.md'>perfect squares</a>
 ### 스택 1번 <a href='https://github.com/hyo814/study-code/blob/main/coding/BaseBall.md'>baseball</a>
 ### 스택 2번 <a href='https://github.com/hyo814/study-code/blob/main/coding/Decode.md'>decode</a>
