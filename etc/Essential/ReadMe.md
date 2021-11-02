@@ -1,12 +1,12 @@
 # 참조사전
 ## 문법
 ### 식별자 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case1.md">식별자</a>
-### 값
-### 타입
-### 변수
-### 식
-### 침조와 복사
-### 조건문
+### 값 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case2.md">값</a>
+### 타입 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case3.md">타입 </a>
+### 변수 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case4.md">변수</a>
+### 식 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case5.md">식</a>
+### 침조와 복사 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case6.md">참조와 복사</a>
+### 조건문 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case7.md">조건문</a>
 ### 반복문
 ### 예외
 ### 인터페이스와 타입 별칭
