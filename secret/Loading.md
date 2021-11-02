@@ -1,0 +1,94 @@
+## Case 23 : Loading
+
+
+### 케이스 주제
+Q. 요구사항 : 회원가입, 로그인, 게시물 작성 등 서버에 데이터를 보낼 경우 전송중인 상태를 화면에 표기합니다.
+
+
+### 기능 요구사항
+- 서버에 데이터를 보내는 경우, 데이터를 전송중인 상태를 나타내기 위해 화면에 스피너 UI를 띄우세요.
+- 통신이 완료되었을 시, 완료된 상태를 나타내는 Alert 창을 띄우세요.
+
+### 문제
+- JavaScript로 해당 기능을 구현하시오.
+
+### 문제 풀이
+### q1. JavaScript로 해당 기능을 구현하시오
+
+#### A)
+```js
+// API 기본 설정
+const todoApi = axios.create({
+    baseURL: 'https://jsonplaceholder.typicode.com',
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+
+// Post API 설정
+const postTodoApi = (data) => {
+    return todoApi({
+        method: 'post',
+        url: '/posts',
+        data: data
+    })
+}
+
+// 응답 상태 처리
+const postTodo = async (data, callApi, callback) => {
+    try {
+        const res = await callApi(data);
+        callback(true, res.data, '등록했습니다.');
+    } catch (e) {
+        callback(false, null, '등록을 실패했습니다.');
+        console.error(e);
+    }
+}
+
+const form = document.querySelector('form');
+const title = document.querySelector('#title');
+const body = document.querySelector('#body');
+const user = document.querySelector('#user');
+const loading = document.querySelector('#loading');
+
+```
+
+- axios.create() : Axios 기본 설정을 세팅하는 메서드.
+
+
+```js
+todoApi.interceptors.request.use(
+    function (config) {
+      // 요청을 보내기 전에 수행할 일
+      loading.style.display = 'block';
+      return config;
+    },
+    function (error) {
+      // 오류 요청을 보내기 전에 수행할 일
+      return Promise.reject(error);
+    }
+)
+
+form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const data = {
+      title: title.value,
+      body: body.value,
+      userId: user.value
+    }
+
+    await postTodo(data, postTodoApi, result);
+});
+
+const result = (isSuccess, data, message) => {
+    loading.style.display = 'none';
+    if(isSuccess) {
+      alert(message);
+    } else {
+      alert(message);
+    }
+}
+```
+
+### 주요 학습 키워드
+- 각 역할별로 콜백함수를 생성하여 코드를 관리하는 방법을 익히고, 통신 성공 / 실패를 효율적으로 관리하는 방법을 익히게 됩니다.
