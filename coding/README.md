@@ -5,7 +5,7 @@
 
 ## 코딩테스트 예제 <a href="https://github.com/hyo814/study-code/blob/main/coding/Example.md"> example </a>
 ### 배열 1번 <a href="https://github.com/hyo814/study-code/blob/main/coding/JumpGame2.md">JumpGame2</a>
-### 배열 2번 
+### 배열 2번 <a href="https://github.com/hyo814/study-code/blob/main/coding/TrappingRainWater.md">TrappingRainWater</a>
 ### 배열 3번 <a href='https://github.com/hyo814/study-code/blob/main/coding/pascal-triangle.md'>pascal-triangle</a>
 ### 큐 1번
 ### 큐 2번 <a href='https://github.com/hyo814/study-code/blob/main/coding/PerfectSquares.md'>perfect squares</a>
