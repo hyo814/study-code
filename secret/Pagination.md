@@ -236,8 +236,6 @@ state.current_page = action.payload.page;
 
 
 #### 기타 - 부록들 전체
-## Case18 : Pagination - 대기업 S사 프론트엔드 개발자님의 답안
-
 ### q1. 문제 상황에 대하여 Java Script로 동작을 구현시킬 수 있는 코드를 작성해보세요
 
 #### A)
