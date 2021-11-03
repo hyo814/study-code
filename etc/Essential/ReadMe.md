@@ -7,9 +7,9 @@
 ### 식 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case5.md">식</a>
 ### 침조와 복사 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case6.md">참조와 복사</a>
 ### 조건문 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case7.md">조건문</a>
-### 반복문
-### 예외
-### 인터페이스와 타입 별칭
+### 반복문 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case8.md">반복문</a>
+### 예외 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case9.md">예외</a>
+### 인터페이스와 타입 별칭 <a href="https://github.com/hyo814/study-code/blob/main/etc/Essential/Case10.md">인터페이스와 타입 별칭</a>
 ### 함수
 ### 속성과 메소드
 ### 일급함수
