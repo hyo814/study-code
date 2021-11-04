@@ -58,6 +58,7 @@
 - 하위 호환성 유지
 
 ## Part 6. 참조사전
+
 ### 문법
 • 식별자 <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case1.md">식별자</a>    
 • 값 <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case2.md">값</a>    
@@ -81,41 +82,44 @@
 • 클래스   <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case20.md">클래스</a>  
 • 인스턴스   <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case21.md">인스턴스</a>  
 • 프로토타입  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case22.md">프로토타입</a>  
-• 컨텍스트  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case23.md">프로토타입</a>  
-• 클로저  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case24.md">프로토타입</a>  
-• 제너릭  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case25.md">프로토타입</a>  
-• 타입 가드  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case26.md">프로토타입</a>  
-• @types  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case27.md">프로토타입</a>  
-• Json  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case28.md">프로토타입</a>  
+• 컨텍스트  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case23.md">컨텍스트</a>  
+• 클로저  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case24.md">클로저</a>  
+• 제너릭  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case25.md">제너릭</a>  
+• 타입 가드  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case26.md">타입 가드 </a>  
+• @types  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case27.md">@types </a>  
+• Json  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case28.md">Json</a>  
+
 ### 개념과 구조  
-• 라이프 사이클과 스코프  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case29.md">프로토타입</a>  
-• 동기와 비동기   <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case30.md">프로토타입</a>  
-• DOM  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case31.md">프로토타입</a>  
-• 이벤트 시스템  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case32.md">프로토타입</a>  
-• 런타임 & 컴파일 타임  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case33.md">프로토타입</a>  
-• API  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case34.md">프로토타입</a>  
-• 플리필  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case135.md">프로토타입</a>  
-• 순회  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case136.md">프로토타입</a>  
-• 프로토콜  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case37.md">프로토타입</a>  
-• 이터러블, 이터레이터 프로토콜  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case38.md">프로토타입</a>  
+• 라이프 사이클과 스코프  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case29.md">라이프 사이클과 스코프</a>  
+• 동기와 비동기   <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case30.md">동기와 비동기</a>  
+• DOM  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case31.md">DOM</a>  
+• 이벤트 시스템  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case32.md">이벤트 시스템</a>  
+• 런타임 & 컴파일 타임  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case33.md">런타임 & 컴파일 타임</a>  
+• API  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case34.md">API</a>  
+• 플리필  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case135.md">플리필</a>  
+• 순회  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case136.md">순회</a>  
+• 프로토콜  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case37.md">프로토콜</a>  
+• 이터러블, 이터레이터 프로토콜  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case38.md">이터러블, 이터레이터 프로토콜</a>  
+
 ### 프로세싱 - 형태의 변환  
-• 객체를 문자열로 변환  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case39.md">프로토타입</a>  
-• 문자열을 형태가 다른 문자열로 변환  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case40.md">프로토타입</a>  
-• 템플릿  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case41.md">프로토타입</a>  
-• 객체를 형태가 다른 객체로 변환  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case42.md">프로토타입</a>  
-• 문자열을 객체로 변환  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case43.md">프로토타입</a>  
-• 객체의 병합 <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case44.md">프로토타입</a>   
+• 객체를 문자열로 변환  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case39.md">객체를 문자열로 변환</a>  
+• 문자열을 형태가 다른 문자열로 변환  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case40.md">문자열을 형태가 다른 문자열로 변환</a>  
+• 템플릿  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case41.md">템플릿</a>  
+• 객체를 형태가 다른 객체로 변환  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case42.md">객체를 형태가 다른 객체로 변환</a>  
+• 문자열을 객체로 변환  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case43.md">문자열을 객체로 변환</a>  
+• 객체의 병합 <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case44.md">객체의 병합</a>   
+
 ### 도구  
-• 디버거 <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case45.md">프로토타입</a>   
-• 웹 팩  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case46.md">프로토타입</a>  
-• 바벨  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case47.md">프로토타입</a>  
-• NPM VS YARN  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case48.md">프로토타입</a>  
-• CSS VS SASS  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case49.md">프로토타입</a>  
-• HANDLEBARS  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case50.md">프로토타입</a>  
-• RESTFUL API  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case51.md">프로토타입</a>  
-• REPL  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case52.md">프로토타입</a>  
-• NODE  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case53.md">프로토타입</a>  
-• OVERVIEW <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case54.md">프로토타입</a>    
+• 디버거 <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case45.md">디버거</a>   
+• 웹 팩  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case46.md"> 웹 팩</a>  
+• 바벨  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case47.md">바벨</a>  
+• NPM VS YARN  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case48.md"> NPM VS YARN</a>  
+• CSS VS SASS  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case49.md"> CSS VS SASS</a>  
+• HANDLEBARS  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case50.md"> HANDLEBARS</a>  
+• RESTFUL API  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case51.md">RESTFUL API</a>  
+• REPL  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case52.md">REPL </a>  
+• NODE  <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case53.md">NODE</a>  
+• OVERVIEW <a href="https://github.com/hyo814/study-code/blob/main/etc/dev_academy_kmt1/Essential/Case54.md">OVERVIEW</a>    
 
 
 ## Part 7. 부록
