@@ -38,3 +38,29 @@ borderRadus;5,
 backgroundColor:'red'
 };
 ``` 
+
+
+```ts
+// 클래스 구조
+class Shapeimplements Box {
+  width:number;
+  height:number;
+  borderRadius:number;
+  backgroundColor:string;
+
+constructor(
+  width:number,
+  height:number,
+  borderRadious:number,
+  backgorundColor:string
+) {
+  this.width = width;
+  this.hieght=height;
+  this.borderRadius=borderRadius;
+  this.backgroundColor =backgroundColor;
+  }
+}
+
+const boxShape = new Shape(10.10.0.'blue')
+
+```
