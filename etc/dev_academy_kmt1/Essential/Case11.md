@@ -34,4 +34,25 @@ function sum(...args) {
     console.log('즉시 실행 함수 실행!');
   }) ();
   
+  const ten = (x,y )=> {
+    return 100+x;
+  }
+  
+  // 제너레이트? => 최초에 실행되면 선택 되지 않고 반환
+  function* gen() {
+    yield 10;
+    yield 20;
+    return 30;
+  }
+  
+  const g = gen();
+  
+  g.next();
+  g.next();
+  g.next();
+  
+  async function myTask() {
+    
+  }
+  
 ```
