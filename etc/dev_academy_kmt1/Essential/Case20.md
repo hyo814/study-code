@@ -1,4 +1,4 @@
-#20 Case 튜플
+# 20 Case 튜플
 
 ```js
 //app.ts
