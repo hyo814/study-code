@@ -61,6 +61,6 @@ constructor(
   }
 }
 
-const boxShape = new Shape(10.10.0.'blue')
+const boxShape = new Shape(10,10,0,'blue')
 
 ```
